@@ -3,7 +3,7 @@
 
 **🚀 Hackatón Talento Caqueteño - Fundación Kasa T**
 
-**¡Bienvenidos a la competición de código organizada por la ** **Fundación Kasa T** **! Este evento busca identificar y potenciar el talento tecnológico del departamento del Caquetá. Invitamos a desarrolladores a trabajar de forma individual o en grupo para resolver desafíos técnicos en un tiempo determinado**.
+**¡Bienvenidos a la competición de código organizada por la **Fundación Kasa T** **! Este evento busca identificar y potenciar el talento tecnológico del departamento del Caquetá. Invitamos a desarrolladores a trabajar de forma individual o en grupo para resolver desafíos técnicos en un tiempo determinado**.
 
 **Esta iniciativa es organizada y financiada íntegramente por la ** **Fundación Kasa T** **.**
 
