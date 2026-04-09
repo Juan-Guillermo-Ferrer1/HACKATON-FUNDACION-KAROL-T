@@ -53,6 +53,7 @@ Para resolver dudas o buscar compañeros de equipo, se habilitarán los canales 
 | Carpeta/Archivo                                   | Descripción                        |
 | ------------------------------------------------- | ----------------------------------- |
 | [template-proyecto/](./template-proyecto)            | Plantilla opcional para tu proyecto |
+| [docs/reglas.md](./docs/reglas.md)                    | Reglas completas del Hackatón       |
 | [docs/guia-evaluacion.md](./docs/guia-evaluacion.md) | Guía de evaluación y criterios    |
 | [.github/ISSUE_TEMPLATE/](./.github/ISSUE_TEMPLATE)  | Templates para entregas             |
 
