@@ -1,7 +1,7 @@
 # 🤖 Hackathon de Innovación: IA & Automatización 2026
 
 <p align="center">
-  <img src="Diseño sin título.jpg" width="100%">
+  <img src=".logos/logo-hackaton.jpg" width="100%">
 </p>
 
 ## 🏛️ Fundación ProMiTierra | Caquetá, Colombia
@@ -20,9 +20,20 @@ Este repositorio es la base técnica para la Hackathon de Talento Regional. El d
 
 ## 🚀 Infraestructura y Despliegue: DockPloy
 
+<p align="center">
+  <img src=".logos/dokploy.png" height="60">
+</p>
+
 Para esta edición, contamos con el respaldo del servidor empresarial de la Fundación y aliados, utilizando **DockPloy**.
 
 DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrán ser desplegados en vivo para pruebas de concepto (PoC) en nuestro entorno seguro.
+
+## 💻 Aliados Tecnológicos
+
+<p align="center">
+  <img src=".logos/n8n.png" height="50"> &nbsp;&nbsp;
+  <img src=".logos/coker.png" height="50">
+</p>
 
 > 📖 Consulta el archivo [DOCUMENTACION_TECNICA.md](./Documentacion/DOCUMENTACION_TECNICA.md) para las instrucciones de configuración.
 
