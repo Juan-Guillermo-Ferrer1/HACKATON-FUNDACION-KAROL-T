@@ -91,6 +91,23 @@ jobs:
           with open(filepath, 'w') as f:
             json.dump(existing, f, indent=2, ensure_ascii=False)
 
+          readme_content = """# Participantes Registrados
+
+| # | Equipo | Integrantes | Correo | Categoría | Experiencia | Fecha |
+|---|--------|-------------|--------|-----------|-------------|-------|
+"""
+          for i, p in enumerate(existing):
+            integrantes = ', '.join(p.get('integrantes', []))
+            fecha = p.get('fecha_inscripcion', '')[:10]
+            readme_content += f"| {i+1} | {p.get('equipo', '')} | {integrantes} | {p.get('correo', '')} | {p.get('categoria', '')} | {p.get('experiencia', '')} | {fecha} |\n"
+
+          readme_content += """
+*Esta lista se actualiza automáticamente cuando un participante se registra mediante un issue.*
+"""
+
+          with open('Participantes/README.md', 'w') as f:
+            f.write(readme_content)
+
           print(f"Participante registrado: {equipo}")
           EOF
 
@@ -98,6 +115,6 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add Participantes/participantes.json
+          git add Participantes/participantes.json Participantes/README.md
           git diff --staged --quiet || git commit -m "Registrar participante de issue #${{ github.event.issue.number }}"
           git push
