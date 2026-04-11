@@ -4,21 +4,67 @@
   <img src=".logos/logo-hackaton.jpg" width="100%">
 </p>
 
+---
+
 ## 🏛️ Fundación ProMiTierra | Caquetá, Colombia
 
-Este repositorio es la base técnica para la Hackathon de Talento Regional. El desafío de este año se centra en el uso de Inteligencia Artificial y flujos de Automatización para resolver problemas reales del departamento del Caquetá.
+> **"No es solo una competencia, es un taller para aprender, crear y transformar tu futuro con tecnología."**
+
+---
+
+## 🎯 Nuestro Objetivo
+
+Este Hackathon va más allá de ganar un premio. Es una oportunidad para:
+
+- **Aprender** habilidades prácticas en Inteligencia Artificial y Automatización
+- **Crear** soluciones reales a problemas de tu comunidad
+- **Conectar** con otros jóvenes innovadores del Caquetá
+- **Desarrollar** un proyecto para tu portafolio profesional
+- ** Ganar** experiencia laboral реальную para tu futuro
+
+---
+
+## 📅 Fechas Importantes
+
+| Etapa | Fecha |
+|------|-------|
+| 📝 Inscripción | Hasta 30 de Abril 2026 |
+| 🚀 Inicio del Hackathon | 1 de Mayo 2026 |
+| ⏰ Entrega de Proyectos | 31 de Mayo 2026 |
+| 🏆 Anuncio de Ganadores | 5 de Junio 2026 |
 
 ---
 
 ## 🎯 Temas Centrales
 
-- **Automatización de Procesos:** Reducción de tareas operativas mediante software.
-- **Implementación de IA:** Integración de modelos de lenguaje (LLMs), visión artificial o análisis predictivo.
-- **Despliegue Profesional:** Uso de infraestructuras modernas para poner soluciones en producción.
+### 1. Automatización de Procesos
+Reduce tareas operativas mediante software. Optimiza flujos de trabajo, elimina manualidades y aumenta eficiencia en empresas u organizaciones.
+
+### 2. Implementación de IA
+Integra modelos de lenguaje (LLMs), visión artificial o análisis predictivo para resolver problemas específicos del Caquetá.
+
+### 3. Despliegue Profesional
+Aprende a poner tus soluciones en producción usando infraestructuras modernas como Docker y DockPloy.
 
 ---
 
-## 🚀 Infraestructura y Despliegue: DockPloy
+## 💰 Premios e Incentivos
+
+| Lugar | Premio |
+|-------|--------|
+| 🥇 1er Lugar | $1.000.000 COP + Despliegue gratuito en DockPloy |
+| 🥈 2do Lugar | $500.000 COP + Mentoría técnica |
+| 🥉 3er Lugar | $250.000 COP |
+
+**Todos los participantes recibirán:**
+- ✅ Certificado de participación
+- ✅ Acceso a recursos de aprendizaje exclusivos
+- ✅ Red de contactos con profesionales del sector
+- ✅ Posibilidad de presentar tu proyecto a aliados de la Fundación
+
+---
+
+## 🚀 Infraestructura: DockPloy
 
 <p align="center">
   <img src=".logos/dokploy.png" height="80">
@@ -26,9 +72,13 @@ Este repositorio es la base técnica para la Hackathon de Talento Regional. El d
 
 Para esta edición, contamos con el respaldo del servidor empresarial de la Fundación y aliados, utilizando **DockPloy**.
 
-DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrán ser desplegados en vivo para pruebas de concepto (PoC) en nuestro entorno seguro.
+DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrás ser desplegados en vivo para pruebas de concepto (PoC) en nuestro entorno seguro.
 
-## 💻 Aliados Tecnológicos / Tech Stack
+> 📖 Consulta [DOCUMENTACION_TECNICA.md](./Documentacion/DOCUMENTACION_TECNICA.md) para las instrucciones de configuración.
+
+---
+
+## 💻 Tech Stack / Tecnologías
 
 <p align="center">
   <img src=".logos/n8n.png" height="80"> &nbsp;&nbsp;
@@ -54,17 +104,15 @@ DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrá
   <img src=".logos/mongodb.png" height="50">
 </p>
 
-> 📖 Consulta el archivo [DOCUMENTACION_TECNICA.md](./Documentacion/DOCUMENTACION_TECNICA.md) para las instrucciones de configuración.
-
 ---
 
 ## 📂 Estructura del Repositorio
 
 | Carpeta | Descripción |
-|---------|-------------|
+|--------|-------------|
 | 📄 [README.md](./README.md) | Este archivo - Información general |
 | 📚 [Documentacion](./Documentacion/) | Guías técnicas, reglas, evaluación |
-| 📝 [Inscripcion - Entrega](./Inscripcion%20-%20Entrega/) | Plantillas para inscribirse y entregar |
+| 📝 [Inscripcion - Entrega](./ Inscripcion%20-%20Entrega/) | Plantillas para inscribirse y entregar |
 | 👥 [Participantes](./Participantes/) | Lista de equipos inscritos |
 | 📦 [Plantillas](./Plantillas/) | Plantilla opcional para tu proyecto |
 
@@ -80,15 +128,22 @@ DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrá
 
 ## 🛠️ Requisitos Técnicos
 
-- **Lenguajes Sugeridos:** Python 3.10+, Node.js 18+.
-- **Entorno:** Docker (para compatibilidad con DockPloy).
-- **IA:** Uso de APIs (OpenAI, Anthropic) o modelos locales (Llama 3, Mistral) vía Ollama.
+- **Lenguajes:** Python 3.10+, Node.js 18+
+- **Entorno:** Docker (para compatibilidad con DockPloy)
+- **IA:** OpenAI, Anthropic u Ollama (modelos locales)
 
 ---
 
-## 💡 Mensaje a la Juventud Caqueteña
+## 💡 ¿Por Qué Participar?
 
 > "La tecnología no es solo una herramienta, es el motor que transformará nuestra Amazonía. En la Fundación ProMiTierra, creemos que el próximo gran algoritmo de IA se escribirá aquí, en el Caquetá."
+
+### Beneficios reales:
+-🎓 Aprende habilidades que el mercado laboral necesita
+-🌱 Contribuye al desarrollo de tu región
+-🤝 Conecta con profesionales y aliados
+-💼 Construye tu portafolio técnico
+-🏆 Gana experiencia en competitions
 
 ---
 
@@ -96,6 +151,15 @@ DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrá
 
 - **Correo:** contacto@fundacionpromitierra.org
 - **Ubicación:** Florencia, Caquetá, Colombia
+- **Web:** www.fundacionpromitierra.org
+
+---
+
+<p align="center">
+
+*🎯 ¡Más que una competencia, es un taller para aprender!*
+
+</p>
 
 ---
 
