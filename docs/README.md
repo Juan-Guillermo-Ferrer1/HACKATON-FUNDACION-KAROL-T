@@ -1,5 +1,9 @@
-# Documentación
+# Documentación - Hackathon IA & Automatización 2026
 
 Archivos de documentación del Hackatón.
 
-- [Guía de Evaluación](./guia-evaluacion.md)
+| Archivo | Descripción |
+| -------- |-------------|
+| [DOCUMENTACION_TECNICA.md](./DOCUMENTACION_TECNICA.md) | Guía técnica: IA, automatización y Docker |
+| [guia-evaluacion.md](./guia-evaluacion.md) | Criterios de evaluación |
+| [reglas.md](./reglas.md) | Reglas completas del Hackatón |
