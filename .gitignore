@@ -1,0 +1,11 @@
+# Ignorar carpetas
+logos/
+.logos/
+
+# Ignorar archivos
+*.log
+.env
+*.tmp
+
+# Ignorar node_modules (si lo tienes)
+node_modules/
