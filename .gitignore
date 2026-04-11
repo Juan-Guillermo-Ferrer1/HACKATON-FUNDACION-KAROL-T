@@ -1,6 +1,5 @@
 # Ignorar carpetas
 logos/
-.logos/
 
 # Ignorar archivos
 *.log
