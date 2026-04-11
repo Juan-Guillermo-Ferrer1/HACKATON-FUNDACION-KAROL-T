@@ -1,16 +1,21 @@
 ---
 name: Pregunta / Duda
 about: Resuelve dudas sobre las bases del hackatón
-title: "[PREGUNTA] - "
+title: "[PREGUNTA] - Tu pregunta breve"
 labels: ['pregunta']
 assignees: ''
 ---
 
 ## Tu Pregunta
+> Escribe tu pregunta.clearamente (ejemplo: "¿Cuál es la fecha límite para entregar?")
 
-Describe tu duda o pregunta claramente:
-
+---
 
 ## Contexto (opcional)
+> Agrega más detalles si necesitas说明 tu pregunta:
+> - ¿En qué documento viste la información?
+> - ¿Qué has intentado buscar antes?
 
-Agrega contexto adicional si es necesario:
+---
+
+*💡 Tip: Antes de preguntar, revisa la documentación en el repositorio.*
