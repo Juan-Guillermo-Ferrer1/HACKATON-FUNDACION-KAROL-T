@@ -1,4 +1,4 @@
-# 📜 Reglas del Hackatón - Fundación Kasa T
+# 📜 Reglas del Hackatón - Fundación ProMiTierra
 
 ## 1. Requisitos para Participar
 
@@ -122,15 +122,15 @@ Los participantes pueden usar cualquier:
 | 🥈 2do Lugar | [Por definir] |
 | 🥉 3er Lugar | [Por definir] |
 
-*Premios sujetos a confirmación. La Fundación Kasa T se reserva el derecho de modificar los premios.*
+*Premios sujetos a confirmación. La Fundación ProMiTierra se reserva el derecho de modificar los premios.*
 
 ---
 
 ## 9. Derechos y Propiedad Intelectual
 
 - Los proyectos creados son propiedad de los participantes
-- Los participantes retains full rights sobre su código
-- La Fundación Kasa T puede usar los proyectos para difusión (con crédito al autor)
+- Los participantes retain full rights sobre su código
+- La Fundación ProMiTierra puede usar los proyectos para difusión (con crédito al autor)
 - Al participar, aceptas estos términos
 
 ---
@@ -156,4 +156,4 @@ Para preguntas sobre estas reglas, crear un Issue usando la plantilla "Pregunta 
 
 ---
 
-*Al participar en el Hackatón Fundación Kasa T, aceptas todas las reglas y términos establecidos.*
+*Al participar en el Hackatón Fundación ProMiTierra, aceptas todas las reglas y términos establecidos.*

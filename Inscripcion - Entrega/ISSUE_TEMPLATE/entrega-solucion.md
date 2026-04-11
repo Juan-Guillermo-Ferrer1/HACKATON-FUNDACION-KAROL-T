@@ -1,6 +1,6 @@
 ---
 name: Entrega de Solución
-about: Registra tu solución para el Hackatón Fundación Kasa T
+about: Registra tu solución para el Hackatón Fundación ProMiTierra
 title: "[ENTREGA] - "
 labels: ['entrega']
 assignees: ''

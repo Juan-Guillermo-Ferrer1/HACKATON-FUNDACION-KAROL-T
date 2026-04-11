@@ -2,29 +2,17 @@
   {
     "equipo": "Escuadron DInamita",
     "integrantes": [
-      "Escuadron DInamita",
-      "Escuadron DInamita",
-      "Escuadron DInamita"
+      "Integrante 1",
+      "Integrante 2",
+      "Integrante 3"
     ],
     "correo": "juangasca4444@gmail.com",
     "institucion": "ITI",
     "edades": "15",
-    "skills": "Amantes de la tegnlogia , recien empezando",
+    "skills": "Amantes de la tecnologia, recien empezando",
     "categoria": "Principiante",
     "experiencia": "Intermedia",
     "fecha_inscripcion": "2026-04-11T21:04:30Z",
-    "issue_url": "https://github.com/Juan-Guillermo-Ferrer1/HACKATON-FUNDACION-KAROL-T/issues/12"
-  },
-  {
-    "equipo": "Nombre del Equipo/Participante",
-    "integrantes": [],
-    "correo": "",
-    "institucion": "",
-    "edades": "15-17-16",
-    "skills": "",
-    "categoria": "Principiante",
-    "experiencia": "Ninguna",
-    "fecha_inscripcion": "2026-04-11T21:05:50Z",
-    "issue_url": "https://github.com/Juan-Guillermo-Ferrer1/HACKATON-FUNDACION-KAROL-T/issues/13"
+    "issue_url": "https://github.com/Juan-Guillermo-Ferrer1/HACKATON-FUNDACION-PROMITIERRA/issues/12"
   }
 ]

@@ -1,4 +1,4 @@
-# 📋 Guía de Evaluación - Hackatón Fundación Kasa T
+# 📋 Guía de Evaluación - Hackatón Fundación ProMiTierra
 
 ## Criterios de Evaluación
 
