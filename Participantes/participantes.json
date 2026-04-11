@@ -1,7 +1,10 @@
 [
   {
     "equipo": "Nombre del Equipo",
-    "integrantes": [],
+    "integrantes": [
+      "Anderson juan david",
+      "Messie ronaldiño"
+    ],
     "correo": "anderson@gmail.com",
     "institucion": "Jorge isaacs",
     "edades": "17",
