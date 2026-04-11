@@ -1,0 +1,103 @@
+name: Registro de Participantes
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  registro:
+    if: contains(github.event.issue.labels.*.name, 'inscripcion')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Extract participant data and update JSON
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          python3 << 'EOF'
+          import json
+          import os
+          import re
+
+          body = os.environ.get('ISSUE_BODY', '')
+          title = os.environ.get('ISSUE_TITLE', '')
+
+          equipo = title.replace('[INSCRIPCIÓN] - ', '').strip()
+
+          participantes = []
+          nombre_integrantes = []
+          correo = ''
+          categoria = ''
+          experiencia = ''
+
+          lines = body.split('\n')
+          current_field = None
+
+          for line in lines:
+            if 'Nombre del Equipo' in line or 'Equipo/Participante' in line:
+              current_field = 'equipo'
+            elif 'Nombre de los Integrantes' in line or 'Integrantes' in line:
+              current_field = 'integrantes'
+            elif 'Correo' in line:
+              current_field = 'correo'
+            elif 'Categoría' in line:
+              current_field = 'categoria'
+            elif 'experiencia' in line.lower() or 'programando' in line.lower():
+              current_field = 'experiencia'
+            elif line.strip().startswith('- ['):
+              if current_field == 'categoria' and 'x' in line:
+                categoria = re.search(r'\[x\]\s*(.+)', line).group(1).strip()
+              elif current_field == 'experiencia' and 'x' in line:
+                experiencia = re.search(r'\[x\]\s*(.+)', line).group(1).strip()
+            elif line.strip() and not line.strip().startswith('#'):
+              value = line.strip()
+              if current_field == 'integrantes' and value:
+                nombre_integrantes.append(value)
+              elif current_field == 'correo' and not correo:
+                correo = value
+
+          data = {
+            'equipo': equipo,
+            'integrantes': nombre_integrantes,
+            'correo': correo,
+            'categoria': categoria,
+            'experiencia': experiencia,
+            'fecha_inscripcion': '${{ github.event.issue.created_at }}',
+            'issue_url': '${{ github.event.issue.html_url }}'
+          }
+
+          filepath = 'Participantes/participantes.json'
+          existing = []
+          if os.path.exists(filepath):
+            with open(filepath, 'r') as f:
+              existing = json.load(f)
+
+          existing = [p for p in existing if p.get('equipo') != equipo]
+          existing.append(data)
+
+          with open(filepath, 'w') as f:
+            json.dump(existing, f, indent=2, ensure_ascii=False)
+
+          print(f"Participante registrado: {equipo}")
+          EOF
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add Participantes/participantes.json
+          git diff --staged --quiet || git commit -m "Registrar participante de issue #${{ github.event.issue.number }}"
+          git push
