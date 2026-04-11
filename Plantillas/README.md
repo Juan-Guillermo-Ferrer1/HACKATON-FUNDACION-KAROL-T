@@ -1,8 +1,10 @@
-# 📁 Plantilla de Proyecto - Hackatón Kasa T
+# 📦 Plantillas de Proyecto
 
-Esta es una plantilla opcional para los participantes del Hackatón. Puedes usarla como base o crear tu propio proyecto desde cero.
+Plantilla opcional para tu proyecto del Hackatón. Puedes usarla como base o crear tu propio proyecto desde cero.
 
-## Estructura sugerida
+---
+
+## 🚀 Estructura Sugerida
 
 ```
 mi-proyecto/
@@ -11,30 +13,47 @@ mi-proyecto/
 ├── tests/            # Pruebas
 ├── .gitignore
 ├── README.md
-└── package.json      # o requirements.txt, Cargo.toml, etc.
+└── package.json      # o requirements.txt, etc.
 ```
 
-## Requisitos mínimos
+---
+
+## ✅ Requisitos Mínimos
 
 - [ ] README.md con instrucciones de instalación y ejecución
 - [ ] Código funcional
 - [ ] Sin contenido ofensivo
 
-## Tech Stack sugerido
+---
 
-Puedes usar cualquier tecnología. Algunos ejemplos:
+## 💻 Tech Stack Sugerido
 
 | Categoría | Opciones |
 |-----------|----------|
-| Frontend | React, Vue, Angular, Svelte, HTML/CSS/JS |
-| Backend | Node.js, Python, Go, Java, C# |
-| Móvil | Flutter, React Native, Kotlin, Swift |
-| DB | PostgreSQL, MySQL, MongoDB, Firebase |
+| **Frontend** | React, Vue, Angular, Svelte, HTML/CSS/JS |
+| **Backend** | Node.js, Python, Go, Java, C# |
+| **Móvil** | Flutter, React Native, Kotlin, Swift |
+| **Base de Datos** | PostgreSQL, MySQL, MongoDB, Firebase |
+| **IA** | Python, OpenAI, Ollama, LangChain |
+| **Automatización** | n8n, Python (Selenium, BeautifulSoup) |
 
-## Para entregar
+---
 
-1. Publica tu código en un repositorio público (GitHub, GitLab, etc.)
-2. Crea un Issue en este repositorio usando la plantilla "Entrega de Solución"
+## 📤 ¿Cómo Entregar tu Proyecto?
+
+1. Publica tu código en un repositorio público (GitHub, GitLab)
+2. Crea un Issue usando la plantilla **"Entrega de Solución"** en [Inscripcion - Entrega](../Inscripcion%20-%20Entrega/)
 3. Completa todos los campos requeridos
+
+---
+
+## 💡 Consejos para tu Proyecto
+
+- Documenta tu código
+- Haz commits frecuentes
+- Usa Docker para facilitar el despliegue
+- Prueba tu aplicación antes de entregar
+
+---
 
 ¡Buena suerte! 🚀
