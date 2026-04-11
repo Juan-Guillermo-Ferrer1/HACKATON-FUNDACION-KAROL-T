@@ -33,3 +33,7 @@ assignees: ''
 - [ ] Ninguna
 - [ ] Básica
 - [ ] Intermedia
+
+---
+
+*Nota: Completa todos los campos y marca las opciones correspondientes.*
