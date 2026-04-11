@@ -65,7 +65,9 @@ jobs:
             lines = body.split('\n')
             current_field = None
 
-            for line in lines:
+            for i, line in enumerate(lines):
+              line_stripped = line.strip()
+              
               if 'Nombre del Equipo' in line or 'Equipo/Participante' in line:
                 current_field = 'equipo'
               elif 'Nombre de los Integrantes' in line or 'Integrantes' in line:
@@ -82,7 +84,7 @@ jobs:
                 current_field = 'categoria'
               elif 'experiencia' in line.lower() or 'programando' in line.lower():
                 current_field = 'experiencia'
-              elif line.strip().startswith('- ['):
+              elif line_stripped.startswith('- ['):
                 if current_field == 'categoria' and 'x' in line:
                   match = re.search(r'\[x\]\s*(.+)', line)
                   if match:
@@ -91,18 +93,17 @@ jobs:
                   match = re.search(r'\[x\]\s*(.+)', line)
                   if match:
                     experiencia = match.group(1).strip()
-              elif line.strip() and not line.strip().startswith('#') and not line.strip().startswith('-'):
-                value = line.strip()
-                if current_field == 'integrantes' and value:
-                  nombre_integrantes.append(value)
-                elif current_field == 'correo' and not correo and '@' in value:
-                  correo = value
+              elif line_stripped and not line_stripped.startswith('#') and not line_stripped.startswith('-'):
+                if current_field == 'integrantes':
+                  nombre_integrantes.append(line_stripped)
+                elif current_field == 'correo' and not correo and '@' in line_stripped:
+                  correo = line_stripped
                 elif current_field == 'institucion' and not institucion:
-                  institucion = value
+                  institucion = line_stripped
                 elif current_field == 'edades' and not edades:
-                  edades = value
+                  edades = line_stripped
                 elif current_field == 'skills' and not skills:
-                  skills = value
+                  skills = line_stripped
 
             data = {
               'equipo': equipo,
