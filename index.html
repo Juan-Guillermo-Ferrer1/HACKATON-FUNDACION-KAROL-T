@@ -1222,14 +1222,20 @@
         const SUPABASE_KEY = 'sb_publishable_iemLVDaLB8_wR4Ah84TKuw_mgauSUWQ';
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-        // Cargar equipos desde Supabase
+// Cargar equipos desde Supabase
         async function cargarEquipos() {
+            const lista = document.getElementById('lista-equipos');
             try {
+                console.log('Cargando de Supabase...');
                 const { data: equipos, error } = await supabase.from('participantes').select('*').order('created_at', { ascending: false });
                 
-                const lista = document.getElementById('lista-equipos');
+                if (error) {
+                    console.error('Error Supabase:', error);
+                    lista.innerHTML = '<div class="no-members">Error al cargar. Intenta más tarde.</div>';
+                    return;
+                }
                 
-                if (error) throw error;
+                console.log('Equipos:', equipos);
                 
                 if (!equipos || equipos.length === 0) {
                     lista.innerHTML = '<div class="no-members">Aún no hay equipos inscritos. ¡Sé el primero!</div>';
@@ -1246,10 +1252,10 @@
                 `).join('');
             } catch (error) {
                 console.error('Error:', error);
-                document.getElementById('lista-equipos').innerHTML = '<div class="no-members">No se pudieron cargar los equipos</div>';
+                lista.innerHTML = '<div class="no-members">Error al cargar equipos: ' + error.message + '</div>';
             }
         }
-        
+
         cargarEquipos();
 
         // Abrir GitHub Issue con datos prellenados
