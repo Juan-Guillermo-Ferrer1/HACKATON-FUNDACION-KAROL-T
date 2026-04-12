@@ -606,51 +606,143 @@
         }
 
         .team-member {
-            padding: 15px;
-            background: var(--gray-100);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(231, 34, 242, 0.2);
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(20, 20, 35, 0.9) 100%);
+            border-radius: 16px;
+            margin-bottom: 15px;
+            border: 2px solid rgba(0, 255, 242, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 255, 242, 0.3);
+            transform: translateY(-2px);
         }
 
         .team-member .name {
             font-weight: 700;
             color: var(--neon-cyan);
-            font-size: 16px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .team-member .tipo {
             display: inline-block;
-            padding: 3px 10px;
-            background: var(--primary);
-            border-radius: 12px;
-            font-size: 12px;
+            padding: 4px 12px;
+            background: linear-gradient(135deg, var(--neon-purple) 0%, var(--primary-light) 100%);
+            border-radius: 20px;
+            font-size: 11px;
             color: var(--white);
-            margin-left: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .team-member .rol {
             color: var(--text-color);
-            font-size: 14px;
-            margin: 8px 0;
+            font-size: 15px;
+            margin: 10px 0;
+            padding: 8px 0;
+            border-top: 1px solid rgba(231, 34, 242, 0.2);
+            border-bottom: 1px solid rgba(231, 34, 242, 0.2);
         }
 
         .team-member .skills {
-            font-size: 13px;
-            color: var(--gray-500);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .team-member .skills span {
+            padding: 5px 12px;
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--neon-cyan);
         }
 
         .team-member .correo {
             font-size: 13px;
             color: var(--neon-purple);
-            margin-top: 8px;
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .no-members {
             text-align: center;
-            padding: 30px;
+            padding: 40px 30px;
             color: var(--gray-500);
             font-style: italic;
+            background: rgba(26, 26, 46, 0.5);
+            border-radius: 16px;
+            border: 2px dashed rgba(231, 34, 242, 0.3);
+        }
+
+        /* Thank You Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #12121f 100%);
+            border: 2px solid var(--neon-cyan);
+            border-radius: 24px;
+            padding: 50px 40px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 50px rgba(0, 255, 242, 0.3);
+            animation: scaleIn 0.4s ease;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        .modal-content p {
+            color: var(--text-color);
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .modal-buttons .btn {
+            min-width: 140px;
         }
 
         @media (max-width: 600px) {
@@ -1076,7 +1168,7 @@ ${experiencia}
             
             window.open(url, '_blank');
             
-            alert('✅ ¡Se abrirá GitHub en una nueva pestaña!\n\n1. Confirma los datos\n2. Envía la issue\n3. ¡Listo!');
+            showThankYouModal();
             e.target.reset();
         });
 
@@ -1133,7 +1225,7 @@ ${descripcion}
             document.getElementById('busco-correo').value = '';
             document.getElementById('busco-descripcion').value = '';
 
-            alert('✅ Se abrirá GitHub en una nueva pestaña.\n\n1. Confirma los datos\n2. Envía el issue\n3. ¡Listo!');
+            showThankYouModal();
         }
 
         function actualizarLista() {
@@ -1154,6 +1246,35 @@ ${descripcion}
                 </div>
             `).join('');
         }
+
+        // Thank You Modal functions
+        function showThankYouModal() {
+            document.getElementById('thankYouModal').classList.add('active');
+        }
+
+        function closeThankYouModal() {
+            document.getElementById('thankYouModal').classList.remove('active');
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goToMain() {
+            closeThankYouModal();
+            document.getElementById('registroForm').reset();
+        }
     </script>
+
+    <!-- Thank You Modal -->
+    <div class="modal-overlay" id="thankYouModal">
+        <div class="modal-content">
+            <h2>🎉 ¡GRACIAS!</h2>
+            <p>Tu inscripción ha sido enviada exitosamente. Se abrirá GitHub para que confirmes y envíes el issue.</p>
+            <p style="font-size: 14px; opacity: 0.7;">Recibirás un correo de confirmación una vez procesada tu inscripción.</p>
+            <div class="modal-buttons">
+                <button type="button" class="btn" onclick="goToMain()">🏠 Principal</button>
+                <button type="button" class="btn" onclick="closeThankYouModal()">✅ Cerrar</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
