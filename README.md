@@ -8,7 +8,17 @@
 
 ## 🏛️ Fundación ProMiTierra | Caquetá, Colombia
 
-> **"No es solo una competencia, es un taller para aprender, crear y transformar tu futuro con tecnología."**
+> *"No es solo una competencia, es un taller para aprender, crear y transformar tu futuro con tecnología."*
+
+### ¿Quién es Fundación ProMiTierra?
+
+Somos una organización sin ánimo de lucro dedicada a promover el desarrollo tecnológico y ambiental en el departamento del Caquetá. Nuestro propósito es generar oportunidades para que los jóvenes de la región puedan adquirir habilidades tecnológicas y contribuir al desarrollo sostenible de nuestra Amazonía.
+
+---
+
+## 🌿 Nuestra Misión
+
+Promover la innovación tecnológica y el desarrollo sostenible en el Caquetá, creando oportunidades para que los jóvenes de la región山区 puedan transformar su futuro con tecnología.
 
 ---
 
@@ -39,7 +49,7 @@ Este Hackathon va más allá de ganar un premio. Es una oportunidad para:
 
 El Hackathon se realizará de manera **presencial** en las instalaciones de la Fundación ProMiTierra.
 
-Los equiposirán acompañados por:
+Los equipos irán acompañados por:
 - 👨‍🏫 **Tutores técnicos** que guiarán tu desarrollo
 - 👩‍💼 **Mentores** de proyectos para Ideas y negocios
 - 🔧 **Soporte técnico** disponible durante todo el evento
@@ -157,11 +167,21 @@ DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrá
 
 ---
 
-## 📧 Contacto
+## 📍 Ubicación de la Fundación (Por Definir)
 
-- **Correo:** contacto@fundacionpromitierra.org
-- **Ubicación:** Florencia, Caquetá, Colombia
-- **Web:** www.fundacionpromitierra.org
+- **Dirección:** Por definir
+- **Ciudad:** Por definir
+- **Departamento:** Caquetá, Colombia
+
+---
+
+## 📧 Contacto (Por Definir)
+
+- **Correo:** Por definir
+- **Teléfono:** Por definir
+- ** WhatsApp:** Por definir
+- **Redes Sociales:** Por definir
+- **Web:** Por definir
 
 ---
 
