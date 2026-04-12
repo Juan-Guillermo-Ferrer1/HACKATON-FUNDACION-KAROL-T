@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción - Hackathon ProMiTierra 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a472a 0%, #2d5a3f 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            background: #1a472a;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+        }
+
+        .form-container {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #1a472a;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-item input {
+            width: auto;
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: #1a472a;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #2d5a3f;
+        }
+
+        .note {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #1a472a;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Hackathon IA & Automatización</h1>
+            <p>Fundación ProMiTierra 2026</p>
+            <span class="tag">Inscripción</span>
+        </div>
+
+        <form class="form-container" id="registroForm">
+            <div class="form-group">
+                <label for="equipo">🏷️ Nombre del Equipo</label>
+                <input type="text" id="equipo" name="equipo" placeholder="Ej: Los Innovadores del Caquetá" required>
+            </div>
+
+            <div class="form-group">
+                <label for="integrantes">👥 Integrantes (uno por línea)</label>
+                <textarea id="integrantes" name="integrantes" rows="4" placeholder="Juan Pérez&#10;María López&#10;Carlos García" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">📧 Correo de contacto</label>
+                <input type="email" id="correo" name="correo" placeholder="tu@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="institucion">🏫 Institución / Colegio / Universidad</label>
+                <input type="text" id="institucion" name="institucion" placeholder="Ej: Universidad Nacional" required>
+            </div>
+
+            <div class="form-group">
+                <label for="edades">🎂 Edades de los integrantes</label>
+                <input type="text" id="edades" name="edades" placeholder="Ej: 15, 16, 17" required>
+            </div>
+
+            <div class="form-group">
+                <label for="skills">💻 Skills / Conocimientos</label>
+                <textarea id="skills" name="skills" rows="3" placeholder="Python, JavaScript, HTML, etc."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>📊 Categoría de participación</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="radio" name="categoria" value="Principiante">
+                        Principiante
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="radio" name="categoria" value="Intermedio">
+                        Intermedio
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="radio" name="categoria" value="Avanzado">
+                        Avanzado
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>⭐ Experiencia programando</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="radio" name="experiencia" value="Ninguna">
+                        Ninguna
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="radio" name="experiencia" value="Básica">
+                        Básica
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="radio" name="experiencia" value="Intermedia">
+                        Intermedia
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">📝 Inscribirse</button>
+
+            <div class="note">
+                ℹ️ Al enviar, se creará un issue en GitHub con tus datos.
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Datos registrados:', data);
+            alert('¡Inscripción enviada! Revisa el issue en GitHub.');
+        });
+    </script>
+</body>
+</html>
