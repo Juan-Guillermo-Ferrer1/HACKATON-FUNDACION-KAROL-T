@@ -27,9 +27,7 @@ jobs:
 
       - name: Extract participant data and update JSON
         run: |
-          cat > /tmp/issue_body.txt << 'EOFINPUT'
-          ${{ github.event.issue.body }}
-          EOFINPUT
+          printf '%s' "${{ github.event.issue.body }}" > /tmp/issue_body.txt
           
           python3 << 'EOF'
           import json
