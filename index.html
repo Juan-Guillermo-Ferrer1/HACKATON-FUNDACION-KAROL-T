@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscripción - Hackathon ProMiTierra 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a472a;
@@ -16,6 +17,11 @@
             --gray-500: #6c757d;
             --gray-700: #495057;
             --gray-900: #212529;
+            --cSky: #120b1c;
+            --cSynthPurple: #e722f2;
+            --cSynthYellow: #f7de74;
+            --cSynthYellowSoft: #f9e9a2;
+            --cSynthBlue: #6e8d8f;
         }
 
         * {
@@ -24,9 +30,120 @@
             box-sizing: border-box;
         }
 
+        .tunnel-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+            background: var(--cSky);
+            background-image: radial-gradient(circle at center, var(--cSynthBlue), var(--cSky) 60%);
+        }
+
+        .tunnel {
+            position: absolute;
+            width: 100vmin;
+            height: 100vmin;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            perspective: 75vmin;
+            transform-style: preserve-3d;
+        }
+
+        .tunnel-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transform: translateZ(50vmin);
+            animation: moveTunnel 1s linear infinite;
+        }
+
+        .tunnel-face {
+            position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .tunnel-face-1 {
+            width: calc(20 * 10vmin);
+            height: 100vmin;
+            left: -50%;
+            transform: rotateY(90deg) translateZ(50vmin) translateX(50%);
+        }
+
+        .tunnel-face-2 {
+            width: calc(20 * 10vmin);
+            height: 100vmin;
+            left: -50%;
+            transform: rotateY(90deg) translateZ(-50vmin) translateX(50%);
+        }
+
+        .tunnel-face-3 {
+            width: calc(20 * 10vmin);
+            height: 100vmin;
+            left: -50%;
+            transform: rotateY(90deg) rotateX(90deg) translateZ(50vmin) translateX(50%);
+        }
+
+        .tunnel-face-4 {
+            width: calc(20 * 10vmin);
+            height: 100vmin;
+            left: -50%;
+            transform: rotateY(90deg) rotateX(90deg) translateZ(-50vmin) translateX(50%);
+        }
+
+        .tunnel-end {
+            width: 100vmin;
+            height: 100vmin;
+            left: -50%;
+            box-shadow:
+                0px 0px 20vmin 10vmin var(--cSynthYellowSoft),
+                inset 0px 0px 50vmin 20vmin rgba(249, 233, 162, 0.5);
+            transform: translateZ(calc(-20 * 10vmin)) translateX(50%);
+        }
+
+        .grid-stroke {
+            width: 10vmin;
+            display: flex;
+        }
+
+        .grid-square {
+            width: 10vmin;
+            height: 10vmin;
+            border: 2px solid var(--cSynthPurple);
+            filter: blur(3px);
+        }
+
+        .highlight {
+            position: absolute;
+            width: 100vmin;
+            height: 100vmin;
+            left: -50%;
+            box-shadow:
+                0px 0px 2vmin 1vmin var(--cSynthYellow),
+                inset 0px 0px 5vmin 2vmin rgba(247, 222, 116, 0.5);
+            transform: translateZ(calc(-20 * 10vmin)) translateX(50%);
+            animation: highlight 2s cubic-bezier(0, 0.55, 0.45, 1) infinite;
+        }
+
+        @keyframes moveTunnel {
+            from { transform: translateZ(50vmin); }
+            to { transform: translateZ(60vmin); }
+        }
+
+        @keyframes highlight {
+            0% { opacity: 0; transform: translateZ(calc(-20 * 10vmin)) translateX(50%); }
+            50% { opacity: 1; }
+            100% { opacity: 0; transform: translateZ(0) translateX(50%); }
+        }
+
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-            background: linear-gradient(135deg, #0d2818 0%, #1a472a 30%, #2d5a3f 100%);
+            font-family: 'Poppins', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
             min-height: 100vh;
             padding: 20px;
             line-height: 1.6;
@@ -390,6 +507,102 @@
     </style>
 </head>
 <body>
+    <div class="tunnel-bg">
+        <div class="tunnel">
+            <div class="tunnel-inner">
+                <div class="tunnel-face tunnel-face-1">
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                </div>
+                <div class="tunnel-face tunnel-face-2">
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                </div>
+                <div class="tunnel-face tunnel-face-3">
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                </div>
+                <div class="tunnel-face tunnel-face-4">
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                    <div class="grid-stroke"><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div><div class="grid-square"></div></div>
+                </div>
+                <div class="tunnel-face tunnel-end"></div>
+                <div class="highlight"></div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="header">
             <div class="brand">🏛️ Fundación ProMiTierra</div>
