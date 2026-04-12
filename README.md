@@ -142,13 +142,15 @@ DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrá
 
 ## 🏃 ¿Cómo Participar?
 
+> ⚠️ **Antes de inscribirte:** Lee las [reglas del evento](./Documentacion/reglas.md) y los [términos](./Normatividad/CONSENTIMIENTO.md)
+
 ### Opción 1: Desde GitHub (Recomendado)
 1. **Inscribete:** Ve a [Issues](./Inscripcion%20-%20Entrega/) y usa la plantilla "Inscripción Participante"
 2. **Desarrolla:** Crea tu proyecto usando las tecnologías que prefieras
 3. **Entrega:** Usa la plantilla "Entrega de Solución" cuando termines
 
-### Opción 2: Página Web
-También puedes inscribirte directamente:
+### Opción 2: Página Web (Más fácil)
+Inscíbete de forma rápida y visual:
 
 **[📝 Inscribirte aquí](https://juan-guillermo-ferrer1.github.io/HACKATON-FUNDACION-PROMITIERRA/)**
 
