@@ -81,12 +81,19 @@ jobs:
             
             field_mapping = {
                 'Nombre del Equipo': 'equipo',
+                'Integrantes': 'integrantes',
                 'Nombre de los Integrantes': 'integrantes',
+                'Correo': 'correo',
                 'Correo de contacto': 'correo',
+                'Institución': 'institucion',
                 'Institución / Colegio / Universidad': 'institucion',
+                'Edades': 'edades',
                 'Edades de los integrantes': 'edades',
+                'Skills': 'skills',
                 'Skills / Conocimientos': 'skills',
+                'Categoría': 'categoria',
                 'Categoría de participación': 'categoria',
+                'Experiencia': 'experiencia',
                 '¿Ya tienes experiencia programando?': 'experiencia'
             }
             
