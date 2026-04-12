@@ -63,58 +63,50 @@ jobs:
             experiencia = ''
 
             lines = body.split('\n')
+            data = {
+                'equipo': equipo,
+                'integrantes': [],
+                'correo': '',
+                'institucion': '',
+                'edades': '',
+                'skills': '',
+                'categoria': '',
+                'experiencia': ''
+            }
+            
             current_field = None
-
-            for i, line in enumerate(lines):
-                line_stripped = line.strip()
-                
-                if '## Nombre del Equipo' in line:
+            
+            for line in lines:
+                line = line.strip()
+                if line == '## Nombre del Equipo':
                     current_field = 'equipo'
-                elif '## Integrantes' in line:
+                elif line == '## Integrantes':
                     current_field = 'integrantes'
-                elif '## Correo' in line:
+                elif line == '## Correo':
                     current_field = 'correo'
-                elif '## Institución' in line or '## Colegio' in line:
+                elif line == '## Institución':
                     current_field = 'institucion'
-                elif '## Edades' in line:
+                elif line == '## Edades':
                     current_field = 'edades'
-                elif '## Skills' in line:
+                elif line == '## Skills':
                     current_field = 'skills'
-                elif '## Categoría' in line:
+                elif line == '## Categoría':
                     current_field = 'categoria'
-                elif '## Experiencia' in line:
+                elif line == '## Experiencia':
                     current_field = 'experiencia'
-                elif line_stripped and not line_stripped.startswith('#') and not line_stripped.startswith('-'):
-                    if current_field == 'integrantes' and line_stripped:
-                        nombre_integrantes.append(line_stripped)
-                    elif current_field == 'correo' and '@' in line_stripped:
-                        correo = line_stripped
-                    elif current_field == 'institucion':
-                        institucion = line_stripped
-                    elif current_field == 'edades' and line_stripped:
-                        edades = line_stripped
-                    elif current_field == 'skills' and line_stripped:
-                        skills = line_stripped
-                    elif current_field == 'categoria' and line_stripped:
-                        categoria = line_stripped
-                    elif current_field == 'experiencia' and line_stripped:
-                        experiencia = line_stripped
-                  elif current_field == 'correo' and '@' in line_stripped:
-                    correo = line_stripped
-                  elif current_field == 'institucion':
-                    institucion = line_stripped
-                  elif current_field == 'edades':
-                    if line_stripped and not line_stripped.startswith('('):
-                      if edades:
-                        edades += ', ' + line_stripped
-                      else:
-                        edades = line_stripped
-                  elif current_field == 'skills':
-                    if line_stripped and not line_stripped.startswith('('):
-                      if skills:
-                        skills += ', ' + line_stripped
-                      else:
-                        skills = line_stripped
+                elif line and not line.startswith('## '):
+                    if current_field == 'integrantes':
+                        data['integrantes'].append(line)
+                    elif current_field and line:
+                        data[current_field] = line
+            
+            nombre_integrantes = data['integrantes']
+            correo = data['correo']
+            institucion = data['institucion']
+            edades = data['edades']
+            skills = data['skills']
+            categoria = data['categoria']
+            experiencia = data['experiencia']
 
             data = {
               'equipo': equipo,
