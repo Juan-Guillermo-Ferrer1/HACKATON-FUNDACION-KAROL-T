@@ -134,7 +134,7 @@ DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrá
 |--------|-------------|
 | 📄 [README.md](./README.md) | Este archivo - Información general |
 | 📚 [Documentacion](./Documentacion/) | Guías técnicas, reglas, evaluación |
-| 📝 [Inscripcion - Entrega](./ Inscripcion%20-%20Entrega/) | Plantillas para inscribirse y entregar |
+| 📝 [Inscripcion - Entrega](./Inscripcion%20-%20Entrega/) | Plantillas para inscribirse y entregar |
 | 👥 [Participantes](./Participantes/) | Lista de equipos inscritos |
 | 📦 [Plantillas](./Plantillas/) | Plantilla opcional para tu proyecto |
 
