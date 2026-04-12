@@ -65,49 +65,40 @@ jobs:
             lines = body.split('\n')
             current_field = None
 
-              for i, line in enumerate(lines):
+            for i, line in enumerate(lines):
                 line_stripped = line.strip()
                 
-                # Detectar nuevo campo por headers
-                if 'Nombre del Equipo' in line:
-                  current_field = 'equipo'
-                  continue
-                elif 'Nombre de los Integrantes' in line or '## Nombre' in line:
-                  current_field = 'integrantes'
-                  continue
-                elif 'Correo' in line:
-                  current_field = 'correo'
-                  continue
-                elif 'Institución' in line or 'Colegio' in line or 'Universidad' in line:
-                  current_field = 'institucion'
-                  continue
-                elif 'Edad' in line:
-                  current_field = 'edades'
-                  continue
-                elif 'Skills' in line or 'Conocimientos' in line:
-                  current_field = 'skills'
-                  continue
-                elif 'Categoría' in line or 'Categoria' in line:
-                  current_field = 'categoria'
-                  continue
-                elif 'experiencia' in line.lower() or 'programando' in line.lower():
-                  current_field = 'experiencia'
-                  continue
-                
-                # Procesar contenido
-                if line_stripped.startswith('- ['):
-                  if current_field == 'categoria' and 'x' in line.lower():
-                    match = re.search(r'\[x\]\s*(.+)', line)
-                    if match:
-                      categoria = match.group(1).strip()
-                  elif current_field == 'experiencia' and 'x' in line.lower():
-                    match = re.search(r'\[x\]\s*(.+)', line)
-                    if match:
-                      experiencia = match.group(1).strip()
+                if '## Nombre del Equipo' in line:
+                    current_field = 'equipo'
+                elif '## Integrantes' in line:
+                    current_field = 'integrantes'
+                elif '## Correo' in line:
+                    current_field = 'correo'
+                elif '## Institución' in line or '## Colegio' in line:
+                    current_field = 'institucion'
+                elif '## Edades' in line:
+                    current_field = 'edades'
+                elif '## Skills' in line:
+                    current_field = 'skills'
+                elif '## Categoría' in line:
+                    current_field = 'categoria'
+                elif '## Experiencia' in line:
+                    current_field = 'experiencia'
                 elif line_stripped and not line_stripped.startswith('#') and not line_stripped.startswith('-'):
-                  if current_field == 'integrantes':
-                    if line_stripped and not line_stripped.startswith('('):
-                      nombre_integrantes.append(line_stripped)
+                    if current_field == 'integrantes' and line_stripped:
+                        nombre_integrantes.append(line_stripped)
+                    elif current_field == 'correo' and '@' in line_stripped:
+                        correo = line_stripped
+                    elif current_field == 'institucion':
+                        institucion = line_stripped
+                    elif current_field == 'edades' and line_stripped:
+                        edades = line_stripped
+                    elif current_field == 'skills' and line_stripped:
+                        skills = line_stripped
+                    elif current_field == 'categoria' and line_stripped:
+                        categoria = line_stripped
+                    elif current_field == 'experiencia' and line_stripped:
+                        experiencia = line_stripped
                   elif current_field == 'correo' and '@' in line_stripped:
                     correo = line_stripped
                   elif current_field == 'institucion':
