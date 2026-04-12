@@ -1233,9 +1233,6 @@ var body = '## Nombre del Equipo\n' + equipo + '\n\n## Integrantes\n' + integran
             console.log('Abriendo GitHub:', url);
             window.open(url, '_blank');
             
-            // Recargar equipos después
-            setTimeout(function() { cargarEquipos(); }, 2000);
-            
             // Mostrar modal
             showThankYouModal();
             
@@ -1245,7 +1242,7 @@ var body = '## Nombre del Equipo\n' + equipo + '\n\n## Integrantes\n' + integran
         // Busco Equipo functionality
         var integrantesData = [];
 
-        function publicarBuscoEquipo() {
+function publicarBuscoEquipo() {
             var nombre = document.getElementById('busco-nombre').value;
             var tipo = document.getElementById('busco-tipo').value;
             var rol = document.getElementById('busco-rol').value;
@@ -1261,49 +1258,48 @@ var body = '## Nombre del Equipo\n' + equipo + '\n\n## Integrantes\n' + integran
             var nuevo = { nombre: nombre, tipo: tipo, rol: rol, skills: skills, correo: correo, descripcion: descripcion };
             integrantesData.push(nuevo);
             
-            // Guardar en Supabase
-            const integranteList = ingredientes.split('\n').filter(function(i) { return i.trim(); });
-            const result = await supabaseClient.from('participantes').insert([{
-                equipo: equipo,
-                integrantes: integranteList,
-                correo: correo,
-                institucion: institucion,
-                edades: edades,
-                skills: skills,
-                categoria: categoria,
-                experiencia: experiencia
-            }]);
-            const data = result.data;
-            const error = result.error;
-                equipo: equipo,
-                integrantes: integranteList,
-                correo: correo,
-                institucion: institucion,
-                edades: edades,
-                skills: skills,
-                categoria: categoria,
-                experiencia: experiencia
-            }]);
-            
-            if (error) {
-                console.error('Error guardando:', error);
-                alert('Error al guardar: ' + error.message);
-            } else {
-                console.log('Guardado:', data);
-            }
-
-            // Abrir nueva issue en GitHub
-            const title = `[INSCRIPCIÓN] - ${equipo}`;
-            const url = `https://github.com/Juan-Guillermo-Ferrer1/HACKATON-FUNDACION-PROMITIERRA/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+            // Abrir nueva issue en GitHubBusco Equipo
+            var title = '[BUSCO-EQUIPO] ' + nombre + ' - ' + rol;
+            var body = '## Nombre\n' + nombre + '\n\n## Tipo\n' + (tipo === 'equipo' ? 'Tengo equipo, necesito integrante' : 'No tengo equipo, quiero unirme') + '\n\n## Rol\n' + rol + '\n\n## Skills\n' + skills + '\n\n## Correo\n' + correo + '\n\n## Descripción\n' + descripcion + '\n\n---\n*Publicado desde página web*';
+            var url = 'https://github.com/Juan-Guillermo-Ferrer1/HACKATON-FUNDACION-PROMITIERRA/issues/new?title=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(body);
             
             console.log('Abriendo GitHub:', url);
             window.open(url, '_blank');
             
-            // Recargar equipos después de un delay
-            setTimeout(() => cargarEquipos(), 2000);
-            
-            // Mostrar modal pero también recargar datos
+            // Mostrar modal
             showThankYouModal();
+            
+            // Limpiar formulario
+            document.getElementById('busco-nombre').value = '';
+            document.getElementById('busco-rol').value = '';
+            document.getElementById('busco-skills').value = '';
+            document.getElementById('busco-correo').value = '';
+            document.getElementById('busco-descripcion').value = '';
+
+            // Actualizar lista
+            actualizarLista();
+        }
+
+        function actualizarLista() {
+            var lista = document.getElementById('lista-integrantes');
+            
+            if (!lista) return;
+            
+            if (integrantesData.length === 0) {
+                lista.innerHTML = '<div class="no-members">Aún no hay publicaciones. ¡Sé el primero!</div>';
+                return;
+            }
+
+            lista.innerHTML = '';
+            for (var i = 0; i < integrantesData.length; i++) {
+                var p = integrantesData[i];
+                var div = document.createElement('div');
+                div.className = 'team-member';
+                div.innerHTML = '<div class="name">' + p.nombre + ' <span class="tipo">' + (p.tipo === 'equipo' ? '🔽 Busca miembro' : '🔼 Tiene equipo') + '</span></div>' +
+                    '<div class="rol">' + p.rol + '</div>';
+                lista.appendChild(div);
+            }
+        }
             
             // Recargar después de un delay
             setTimeout(() => {
