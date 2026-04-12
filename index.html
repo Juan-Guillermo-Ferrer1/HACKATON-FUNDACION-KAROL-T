@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción - Hackathon ProMiTierra 2026</title>
+    <style>
+        :root {
+            --primary: #1a472a;
+            --primary-light: #2d5a3f;
+            --secondary: #4a7c59;
+            --accent: #f4a614;
+            --white: #ffffff;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-500: #6c757d;
+            --gray-700: #495057;
+            --gray-900: #212529;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background: linear-gradient(135deg, #0d2818 0%, #1a472a 30%, #2d5a3f 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+        }
+
+        .header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .header .brand {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--gray-900);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .info-bar {
+            background: var(--gray-100);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 5px 15px;
+        }
+
+        .info-item .label {
+            font-size: 12px;
+            color: var(--gray-500);
+            text-transform: uppercase;
+        }
+
+        .info-item .value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .tech-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: 20px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .tech-section h3 {
+            font-size: 14px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tech-icons span {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+
+        .form-container {
+            padding: 35px 40px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--gray-700);
+            font-size: 14px;
+        }
+
+        label .required {
+            color: var(--error);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(26,71,42,0.1);
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 18px;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 140px;
+        }
+
+        .checkbox-item:hover {
+            border-color: var(--secondary);
+        }
+
+        .checkbox-item input {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 18px 30px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(26,71,42,0.3);
+        }
+
+        .note {
+            background: #e8f5e9;
+            padding: 18px 22px;
+            border-radius: 14px;
+            margin-top: 25px;
+            font-size: 14px;
+            color: var(--primary);
+        }
+
+        /* Busco Equipo Section */
+        .busco-equipo {
+            background: linear-gradient(135deg, var(--accent) 0%, #e69400 100%);
+            padding: 35px 40px;
+            margin-top: 30px;
+        }
+
+        .busco-equipo h2 {
+            color: var(--gray-900);
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .busco-equipo p {
+            color: var(--gray-700);
+            margin-bottom: 20px;
+        }
+
+        .busco-form {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 14px;
+        }
+
+        .busco-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .busco-form label {
+            font-size: 13px;
+        }
+
+        .busco-form input, .busco-form select, .busco-form textarea {
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+
+        .busco-form .btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Team List */
+        .team-list {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 14px;
+            margin-top: 25px;
+        }
+
+        .team-list h3 {
+            color: var(--gray-900);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .member-card {
+            background: var(--gray-100);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .member-card .name {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .member-card .role {
+            font-size: 13px;
+            color: var(--secondary);
+            margin: 5px 0;
+        }
+
+        .member-card .contact {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        .member-card .skills {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .member-card .skills span {
+            background: var(--primary);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+        }
+
+        .no-members {
+            text-align: center;
+            color: var(--gray-500);
+            padding: 20px;
+        }
+
+        .footer {
+            background: var(--primary);
+            padding: 25px 30px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 10px;
+            opacity: 0.9;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; }
+            .container { margin: 10px; }
+            .header { padding: 30px 20px; }
+            .form-container { padding: 25px 20px; }
+            .checkbox-group { flex-direction: column; }
+            .checkbox-item { width: 100%; }
+            .info-bar { flex-direction: column; gap: 15px; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container { animation: fadeIn 0.6s ease-out; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="brand">🏛️ Fundación ProMiTierra</div>
+            <h1>Hackathon IA & Automatización</h1>
+            <p class="subtitle">Edición 2026</p>
+            <span class="badge">📝 Inscripción</span>
+        </div>
+
+        <div class="info-bar">
+            <div class="info-item">
+                <div class="label">Fecha</div>
+                <div class="value">Por definir</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Modalidad</div>
+                <div class="value">Presencial</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Equipo</div>
+                <div class="value">2-4 personas</div>
+            </div>
+            <div class="info-item">
+                <div class="label">Costo</div>
+                <div class="value">Gratis</div>
+            </div>
+        </div>
+
+        <div class="tech-section">
+            <h3>TECNOLOGÍAS DEL EVENTO</h3>
+            <div class="tech-icons">
+                <span>🤖 n8n</span>
+                <span>🐍 Python</span>
+                <span>💻 Node.js</span>
+                <span>🧠 OpenAI</span>
+                <span>🐳 Docker</span>
+                <span>🦙 Ollama</span>
+                <span>📦 GitHub</span>
+            </div>
+        </div>
+
+        <form class="form-container" id="registroForm">
+            <div class="section-title">📋 Datos del Equipo</div>
+            
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label for="equipo">Nombre del Equipo <span class="required">*</span></label>
+                    <input type="text" id="equipo" name="equipo" placeholder="Ej: Los Innovadores del Caquetá" required>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="integrantes">Integrantes del Equipo <span class="required">*</span> (uno por línea)</label>
+                <textarea id="integrantes" name="integrantes" rows="4" placeholder="Juan Pérez&#10;María López&#10;Carlos García" required></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="correo">Correo de contacto <span class="required">*</span></label>
+                    <input type="email" id="correo" name="correo" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="institucion">Institución <span class="required">*</span></label>
+                    <input type="text" id="institucion" name="institucion" placeholder="Universidad Nacional" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="edades">Edades</label>
+                    <input type="text" id="edades" name="edades" placeholder="15, 16, 17">
+                </div>
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+                    <input type="text" id="skills" name="skills" placeholder="Python, JavaScript...">
+                </div>
+            </div>
+
+            <div class="section-title" style="margin-top:30px;">📊 Categoría</div>
+
+            <div class="form-group">
+                <label>Nivel <span class="required">*</span></label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="radio" name="categoria" value="Principiante">
+                        <span>🌱 Principiante</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="radio" name="categoria" value="Intermedio">
+                        <span>🌿 Intermedio</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="radio" name="categoria" value="Avanzado">
+                        <span>🌳 Avanzado</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Experiencia programando</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item">
+                        <input type="radio" name="experiencia" value="Ninguna">
+                        <span>❌ Ninguna</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="radio" name="experiencia" value="Básica">
+                        <span>🔰 Básica</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="radio" name="experiencia" value="Intermedia">
+                        <span>💻 Intermedia</span>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">🚀 Inscribirse al Hackathon</button>
+
+            <div class="note">
+                ℹ️ Al enviar, se creará un issue en GitHub con tus datos.
+            </div>
+        </form>
+
+        <!-- Busco Equipo Section -->
+        <div class="busco-equipo" id="busco-equipo">
+            <h2>👥 ¿Buscas Equipo?</h2>
+            <p>Si necesitas integrar personas a tu equipo o quieres unirte a uno, ¡publica aquí!</p>
+            
+            <div class="busco-form">
+                <div class="form-group">
+                    <label>Tu nombre <span class="required">*</span></label>
+                    <input type="text" id="busco-nombre" placeholder="Juan Pérez" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Qué buscas? <span class="required">*</span></label>
+                    <select id="busco-tipo">
+                        <option value="equipo">Tengo equipo, necesito integrante</option>
+                        <option value="integrante">No tengo equipo, quiero unirme</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Tu rol / Qué haces? <span class="required">*</span></label>
+                    <input type="text" id="busco-rol" placeholder="Desarrollador, Diseño, Ideas, Gestion" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Skills / Conocimientos</label>
+                    <input type="text" id="busco-skills" placeholder="Python, Diseño, Liderazgo">
+                </div>
+                
+                <div class="form-group">
+                    <label>Correo <span class="required">*</span></label>
+                    <input type="email" id="busco-correo" placeholder="tu@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Descripción breve</label>
+                    <textarea id="busco-descripcion" rows="2" placeholder="Busco equipo para proyecto de IA sobre educación..."></textarea>
+                </div>
+                
+                <button type="button" class="btn" onclick="publicarBuscoEquipo()">📢 Publicar</button>
+            </div>
+
+            <div class="team-list">
+                <h3>👨‍💻 Personas buscando equipo</h3>
+                <div id="lista-integrantes">
+                    <div class="no-members">
+                       Aún no hay publicaciones. ¡Sé el primero!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>🏛️ Fundación ProMiTierra</strong> - Innovación con Sentido Humano</p>
+            <div>
+                <a href="tel:+573116124993">📱 +57 311 612 4993</a>
+                <a href="https://wa.me/message/SBDTEPUTLDLNP1">💬 WhatsApp</a>
+                <a href="https://www.promitierra.org">🌐 promitierra.org</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Inscripción enviada!');
+        });
+
+        // Busco Equipo functionality
+        let integranteData = [];
+
+        function publicarBuscoEquipo() {
+            const nombre = document.getElementById('busco-nombre').value;
+            const tipo = document.getElementById('busco-tipo').value;
+            const rol = document.getElementById('busco-rol').value;
+            const skills = document.getElementById('busco-skills').value;
+            const correo = document.getElementById('busco-correo').value;
+            const descripcion = document.getElementById('busco-descripcion').value;
+
+            if (!nombre || !rol || !correo) {
+                alert('Por favor completa los campos obligatorios');
+                return;
+            }
+
+            const nuevo = { nombre, tipo, rol, skills, correo, descripcion };
+            integranteData.push(nuevo);
+            
+            actualizarLista();
+            
+            // Limpiar formulario
+            document.getElementById('busco-nombre').value = '';
+            document.getElementById('busco-rol').value = '';
+            document.getElementById('busco-skills').value = '';
+            document.getElementById('busco-correo').value = '';
+            document.getElementById('busco-descripcion').value = '';
+
+            alert('¡Publicación creada! revisa la lista abajo.');
+        }
+
+        function actualizarLista() {
+            const lista = document.getElementById('lista-integrantes');
+            
+            if (integranteData.length === 0) {
+                lista.innerHTML = '<div class="no-members">Aún no hay publicaciones. ¡Sé el primero!</div>';
+                return;
+            }
+
+            lista.innerHTML = integranteData.map(p => `
+                <div class="member-card">
+                    <div class="name">${p.nombre} ${p.tipo === 'equipo' ? '🔽 Busca miembro' : '🔼 Tiene equipo'}</div>
+                    <div class="role">${p.rol}</div>
+                    <div class="contact">📧 ${p.correo}</div>
+                    ${p.skills ? `<div class="skills">${p.skills.split(',').map(s => `<span>${s.trim()}</span>`).join('')}</div>` : ''}
+                    ${p.descripcion ? `<p style="margin-top:8px;font-size:13px;color:#666">${p.descripcion}</p>` : ''}
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
