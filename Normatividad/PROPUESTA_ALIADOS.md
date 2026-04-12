@@ -1,166 +1,125 @@
-# 🤝 PROPUESTA DE ALIANZA
+# 🤝 CARTA DE ALIANZA INSTITUCIONAL
 
 ## Hackathon de Innovación: IA & Automatización 2026
-### Fundación ProMiTierra
-
----
 
 <p align="center">
-<img src="../.logos/logo-hackaton.jpg" width="80%">
+<img src="../.logos/ProMiTierra Logo transparente.png" width="300">
 </p>
 
 ---
 
-## 🌟 ¡Conviértete en Aliado del Hackathon!
+**De:** Fundación ProMiTierra  
+**Para:** Rectores, Directores, Coordinadores de Instituciones Educativas  
+**Asunto:** Solicitud de Alianza para Hackathon de Innovación 2026  
 
 ---
 
-## ¿Qué es el Hackathon ProMiTierra 2026?
+## 1. PRESENTACIÓN
 
-Es un evento presencial de **innovación tecnológica** para jóvenes del Caquetá donde aprenderán a crear soluciones con **Inteligencia Artificial y Automatización**.
-
-> *"No es solo una competencia, es un taller para aprender, crear y transformar el futuro con tecnología."*
+La **Fundación ProMiTierra**, organización sin ánimo de lucro dedicada a promover el desarrollo tecnológico y social en el departamento del Caquetá, tiene el agrado de invitar a su institución a participar como **aliado estratégico** del **Hackathon de Innovación: IA & Automatización 2026**.
 
 ---
 
-## 🎯 Nuestro Objetivo
+## 2. SOBRE EL EVENTO
 
-- Capacitar jóvenes en tecnologías de vanguardia
+| Aspecto | Detalle |
+|---------|---------|
+| **Nombre** | Hackathon de Innovación: IA & Automatización 2026 |
+| **Modalidad** | Presencial |
+| **Público** | Jóvenes de 14 a 25 años |
+| **Cupo estimado** | 30-50 participantes |
+| **Duración** | [Por definir] |
+| **Sede** | Por definir, Caquetá |
+
+---
+
+## 3. OBJETIVOS DEL EVENTO
+
+- Capacitar jóvenes en tecnologías de Inteligencia Artificial y Automatización
 - Fomentar el emprendimiento tecnológico en la región
 - Crear soluciones a problemas reales del Caquetá
-- Generar oportunidades laborales para los participantes
+- Generar oportunidades laborales y de desarrollo profesional
 
 ---
 
-## 👥 Público Objetivo
+## 4. ¿CÓMO PUEDE APOYAR SU INSTITUCIÓN?
 
-- **30-50 jóvenes** de 14 a 25 años
-- Estudiantes de colegios y universidades del Caquetá
-- Jóvenes emprendedores
-- Principiantes y avanzados en tecnología
+### 4.1. Aporte de Espacios
+- [ ] Préstamo de salón/auditorio
+- [ ] Espacio para talleres
+- [ ] Conexión a internet
 
----
+### 4.2. Aporte de Equipos
+- [ ] Computadores para participantes
+- [ ] Proyector y pantalla
+- [ ] Equipos de audio
 
-## 🤝 ¿Cómo Puedes Apoyar?
+### 4.3. Aporte Humano
+- [ ] Tutores técnicos para acompañamiento
+- [ ] Mentores de negocio/ideas
+- [ ] Charlas o talleres
 
-### 1.,Aporte de Espacios
-- 📍 Préstamo de salón/auditorio para el evento
-- 📍 Espacio para talleres y mentorías
-- 📍 Conexión a internet de alta velocidad
-
-### 2. Aporte de Equipos
-- 💻 Computadores para participantes que no tengan
-- 🔌 Extensiones, cargadores, adaptadores
-- 📺 Proyector y pantalla
-- 🎤 Equipos de audio
-
-### 3. Aporte de Conocimiento
-- 👨‍🏫 Tutores técnicos para acompañar equipos
-- 👩‍🏫 Mentores de negocio/ideas
-- 🎓 Charlas o talleres durante el evento
-
-### 4. Aporte de Alimentación
-- 🍕 Refrigerios para los participantes
-- ☕ Café y bebidas
-- 🍱 Almuerzos (si es evento de todo el día)
-
-### 5. Aporte de Premios
-- 🏆 Tablets o accesorios tecnológicos
-- 📚 Cursos online o membresías
-- 🛠️ Herramientas o materiales
-
-### 6. Aporte de Transporte
-- 🚐 Traslado para participantes de zonas rurales
-- 🎫 Bonos de transporte
+### 4.4. Otros Aportes
+- [ ] Refrigerios / Alimentación
+- [ ] Premios en especie
+- [ ] Transporte para estudiantes
 
 ---
 
-## 🎁 Beneficios como Aliado
+## 5. BENEFICIOS PARA LA INSTITUCIÓN ALIADA
 
-| Beneficio | Aliado |
-|-----------|--------|
+| Beneficio | Nivel |
+|-----------|-------|
 | ✅ Logo en materiales del evento | Básico |
 | ✅ Mención en redes sociales | Básico |
-| ✅ Presencia en certificado de participantes | Básico |
+| ✅ Certificado de alianza | Básico |
 | ✅ Booth/stand en el evento | Destacado |
 | ✅ Oportunidad de dar Charla/Workshop | Destacado |
-| ✅ Mención en prensa y medios | Premium |
-| ✅ Sesión de reclutamiento de talento | Premium |
+| ✅ Presencia en medios de comunicación | Premium |
 
 ---
 
-## 📅 Fechas del Evento
+## 6. COMPROMISOS DE LA FUNDACIÓN
 
-| Actividad | Fecha |
-|-----------|-------|
-| Inscripciones | Por definir |
-| Hackathon (presencial) | Por definir |
-| Entrega de proyectos | Por definir |
-| Anuncio de ganadores | Por definir |
+La Fundación ProMiTierra se compromete a:
 
----
-
-## 📍 ¿Qué deben preparar los participantes?
-
-### Para los Estudiantes:
-- 💻 Laptop propia (si tiene)
-- 📱 Cuenta de GitHub
-- 📧 Correo electrónico
-- 💡 Ideas para su proyecto
-- 📝 Cuaderno para notas
-
-### Para los Tutores/Mentores:
-- 📊 Temas que pueden enseñar
-- 💻 Computador para demos
-- 📚 Material de apoyo (opcional)
-
-### Para la Institución:
-- 📍 Espacio con tomas de corriente
-- 🌐 Conexión a internet estable
-- 🪑 Mesas y sillas para equipos
+- Organizar y coordinar el evento
+- Gestionar inscripciones y logística
+- Proveer materiales de formación
+- Certificar la participación
+- Dar reconocimiento público a los aliados
 
 ---
 
-## 📞 Contáctanos
+## 7. FIRMA DEL CONVENIO
 
-**Fundación ProMiTierra**
+Ambas partes manifestamos nuestro interés en establecer esta alianza:
 
-- 📱 Teléfono: +57 311 612 4993
-- 🌐 Web: www.promitierra.org
+| | |
+|---|---|
+| **Por la Fundación ProMiTierra** | **Por la Institución Aliada** |
+| | |
+| **Firma:** | **Firma:** |
+| __________________________ | __________________________ |
+| | |
+| **Nombre:** | **Nombre:** |
+| **Cargo:** | **Cargo:** |
+| **Fecha:** | **Fecha:** |
 
 ---
 
-## 📋 Cupón de Interés
+## 8. CONTACTO
 
-**Institución/Empresa:** _______________________________________
-
-**Nombre del representante:** _______________________________________
-
-**Cargo:** _______________________________________
-
-**Teléfono:** _______________________________________
-
-**Email:** _______________________________________
-
-**Tipo de apoyo que puede ofrecer:**
-
-- [ ] Espacio físico
-- [ ] Equipos
-- [ ] Tutores/Mentores
-- [ ] Alimentación
-- [ ] Premios
-- [ ] Transporte
-- [ ]Otro: _______________________________________
-
-**Observaciones:**
-
-_______________________________________________________________
+**Fundación ProMiTierra**  
+📱 Teléfono: +57 311 612 4993  
+🌐 Web: www.promitierra.org  
+📧 Email: [Por definir]  
 
 ---
 
 <p align="center">
 
-**¡Juntos hagamos posible este evento para los jóvenes del Caquetá!**
+*Juntos Sí, Solos No. La Voluntad es Fuerza!*
 
 *Fundación ProMiTierra - Innovación con Sentido Humano*
 
