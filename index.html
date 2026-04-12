@@ -7,21 +7,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a472a;
-            --primary-light: #2d5a3f;
-            --secondary: #4a7c59;
-            --accent: #f4a614;
+            --primary: #e722f2;
+            --primary-light: #b517c7;
+            --secondary: #00d4ff;
+            --accent: #00fff2;
             --white: #ffffff;
-            --gray-100: #f8f9fa;
-            --gray-200: #e9ecef;
-            --gray-500: #6c757d;
-            --gray-700: #495057;
-            --gray-900: #212529;
+            --gray-100: #1a1a2e;
+            --gray-200: #2a2a4e;
+            --gray-500: #8888aa;
+            --gray-700: #aaaacc;
+            --gray-900: #eeeeff;
             --neon-bg: #0a0a12;
             --neon-purple: #e722f2;
             --neon-purple-light: #b517c7;
             --neon-blue: #00d4ff;
             --neon-cyan: #00fff2;
+            --container-bg: #12121f;
+            --text-color: #e0e0ff;
         }
 
         * {
@@ -283,328 +285,232 @@
             line-height: 1.6;
         }
 
-        .container {
+.container {
             max-width: 700px;
             margin: 20px auto;
-            background: var(--white);
+            background: var(--container-bg);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+            box-shadow: 0 0 40px rgba(231, 34, 242, 0.2), 0 25px 80px rgba(0,0,0,0.4);
+            border: 1px solid rgba(231, 34, 242, 0.3);
         }
 
         .header {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--neon-purple) 100%);
             color: var(--white);
             padding: 40px 30px;
             text-align: center;
+            border-bottom: 2px solid var(--neon-cyan);
         }
 
         .header h1 {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 8px;
+            text-shadow: 0 0 20px var(--neon-cyan);
         }
 
         .header .subtitle {
             font-size: 18px;
             opacity: 0.9;
-            margin-bottom: 15px;
+            color: var(--neon-cyan);
         }
 
         .header .brand {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 16px;
             margin-bottom: 10px;
-            color: var(--accent);
+            color: var(--neon-cyan);
         }
 
-        .badge {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--gray-900);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 14px;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-purple) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            font-size: 16px;
             font-weight: 600;
-            text-transform: uppercase;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(231, 34, 242, 0.4);
         }
 
-        .info-bar {
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(231, 34, 242, 0.6);
+        }
+
+.info-section {
             background: var(--gray-100);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .info-item {
-            text-align: center;
-            padding: 5px 15px;
-        }
-
-        .info-item .label {
-            font-size: 12px;
             color: var(--gray-500);
-            text-transform: uppercase;
-        }
-
-        .info-item .value {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--gray-700);
-        }
-
-        .tech-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            padding: 20px;
+            padding: 25px 30px;
             text-align: center;
             color: var(--white);
         }
 
-        .tech-section h3 {
-            font-size: 14px;
-            margin-bottom: 15px;
-            opacity: 0.8;
-        }
-
-        .tech-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .tech-icons span {
-            background: rgba(255,255,255,0.2);
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-size: 12px;
-        }
-
         .form-container {
-            padding: 35px 40px;
+            padding: 30px;
+            color: var(--text-color);
         }
 
         .section-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--gray-900);
+            font-size: 20px;
+            font-weight: 700;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--gray-200);
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 255, 242, 0.5);
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 15px;
+            margin-bottom: 15px;
         }
 
         .form-group {
-            margin-bottom: 22px;
+            margin-bottom: 15px;
         }
 
         .form-group.full-width {
             grid-column: 1 / -1;
         }
 
-        label {
+        .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 600;
-            color: var(--gray-700);
+            color: var(--neon-cyan);
             font-size: 14px;
         }
 
-        label .required {
-            color: var(--error);
-        }
-
-        input, select, textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-            padding: 14px 18px;
+            padding: 12px 16px;
+            border-radius: 10px;
             border: 2px solid var(--gray-200);
-            border-radius: 12px;
+            background: var(--gray-100);
+            color: var(--text-color);
             font-size: 15px;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
-        input:focus, select:focus, textarea:focus {
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(26,71,42,0.1);
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 15px rgba(231, 34, 242, 0.4);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--gray-500);
         }
 
         .checkbox-group {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .checkbox-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 18px;
-            border: 2px solid var(--gray-200);
-            border-radius: 12px;
+            gap: 8px;
             cursor: pointer;
-            transition: all 0.3s;
-            min-width: 140px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background: var(--gray-100);
+            border: 2px solid var(--gray-200);
+            color: var(--text-color);
+            transition: all 0.3s ease;
         }
 
         .checkbox-item:hover {
-            border-color: var(--secondary);
+            border-color: var(--neon-purple);
         }
 
-        .checkbox-item input {
-            width: 20px;
-            height: 20px;
-            accent-color: var(--primary);
+        .checkbox-item input[type="radio"] {
+            width: auto;
+            accent-color: var(--neon-purple);
         }
 
-        .btn-submit {
-            width: 100%;
-            padding: 18px 30px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            border: none;
-            border-radius: 14px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            margin-top: 10px;
+        .required {
+            color: #ff6b6b;
         }
 
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(26,71,42,0.3);
+        .info-bar {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 30px;
+            background: rgba(231, 34, 242, 0.1);
+            border-top: 1px solid rgba(231, 34, 242, 0.2);
+            border-bottom: 1px solid rgba(231, 34, 242, 0.2);
         }
 
-        .note {
-            background: #e8f5e9;
-            padding: 18px 22px;
-            border-radius: 14px;
-            margin-top: 25px;
-            font-size: 14px;
-            color: var(--primary);
+        .info-bar .info-item {
+            text-align: center;
         }
 
-        /* Busco Equipo Section */
-        .busco-equipo {
-            background: linear-gradient(135deg, var(--accent) 0%, #e69400 100%);
-            padding: 35px 40px;
-            margin-top: 30px;
-        }
-
-        .busco-equipo h2 {
-            color: var(--gray-900);
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .busco-equipo p {
-            color: var(--gray-700);
-            margin-bottom: 20px;
-        }
-
-        .busco-form {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 14px;
-        }
-
-        .busco-form .form-group {
-            margin-bottom: 15px;
-        }
-
-        .busco-form label {
-            font-size: 13px;
-        }
-
-        .busco-form input, .busco-form select, .busco-form textarea {
-            padding: 10px 14px;
-            font-size: 14px;
-        }
-
-        .busco-form .btn {
-            background: var(--primary);
-            color: var(--white);
-            padding: 12px 24px;
-            border: none;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        /* Team List */
-        .team-list {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 14px;
-            margin-top: 25px;
-        }
-
-        .team-list h3 {
-            color: var(--gray-900);
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        .member-card {
-            background: var(--gray-100);
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 12px;
-        }
-
-        .member-card .name {
-            font-weight: 600;
-            color: var(--gray-900);
-        }
-
-        .member-card .role {
-            font-size: 13px;
-            color: var(--secondary);
-            margin: 5px 0;
-        }
-
-        .member-card .contact {
+        .info-bar .label {
             font-size: 12px;
             color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .member-card .skills {
-            display: flex;
-            gap: 5px;
-            flex-wrap: wrap;
-            margin-top: 8px;
+        .info-bar .value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--neon-cyan);
         }
 
-        .member-card .skills span {
-            background: var(--primary);
-            color: var(--white);
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 11px;
-        }
-
-        .no-members {
+        .tech-section {
+            padding: 20px 30px;
+            background: var(--gray-100);
             text-align: center;
+        }
+
+        .tech-section h3 {
+            font-size: 14px;
             color: var(--gray-500);
-            padding: 20px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .tech-icons span {
+            padding: 8px 14px;
+            background: var(--gray-200);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--neon-cyan);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(0, 255, 242, 0.2);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--neon-cyan);
+            margin-top: 10px;
         }
 
         .footer {
-            background: var(--primary);
             padding: 25px 30px;
             text-align: center;
-            color: var(--white);
+            background: var(--gray-100);
+            color: var(--gray-500);
+            font-size: 14px;
         }
 
         .footer p {
