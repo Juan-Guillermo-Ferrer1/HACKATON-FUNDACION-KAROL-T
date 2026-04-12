@@ -7,7 +7,7 @@ Esta carpeta contiene documentos legales y administrativos del Hackathon.
 | Archivo | Descripción |
 |---------|-------------|
 | [CONSENTIMIENTO.md](./CONSENTIMIENTO.md) | Formulario de consentimiento para participantes (imprimible) |
-| [PROPUESTA_PATROCINADORES.md](./PROPUESTA_PATROCINADORES.md) | Propuesta comercial para buscar patrocinadores |
+| [PROPUESTA_ALIADOS.md](./PROPUESTA_ALIADOS.md) | Propuesta para universidades, colegios y aliados |
 
 ---
 
