@@ -148,15 +148,9 @@ DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrá
 3. **Entrega:** Usa la plantilla "Entrega de Solución" cuando termines
 
 ### Opción 2: Página Web
-<<<<<<< HEAD
-También puedes inscribirte directamente desde nuestra página web:
-
-**[📝 Inscribirte aquí](https://juan-guillermo-ferrer1.github.io/HACKATON-FUNDACION-PROMITIERRA/)** *(Próximamente)*
-=======
 También puedes inscribirte directamente:
 
 **[📝 Inscribirte aquí](https://juan-guillermo-ferrer1.github.io/HACKATON-FUNDACION-PROMITIERRA/)**
->>>>>>> pagina-registro
 
 ---
 
