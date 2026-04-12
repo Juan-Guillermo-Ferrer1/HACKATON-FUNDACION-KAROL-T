@@ -12,13 +12,15 @@
 
 ### ¿Quién es Fundación ProMiTierra?
 
-Somos una organización sin ánimo de lucro dedicada a promover el desarrollo tecnológico y ambiental en el departamento del Caquetá. Nuestro propósito es generar oportunidades para que los jóvenes de la región puedan adquirir habilidades tecnológicas y contribuir al desarrollo sostenible de nuestra Amazonía.
+Somos una organización sin ánimo de lucro dedicada a promover el desarrollo tecnológico y ambiental en el departamento del Caquetá. Nuestra misión es ayudar a las personas a reducir su pobreza mediante la generación de iniciativas, campañas y proyectos de innovación social útiles para la sociedad.
 
 ---
 
 ## 🌿 Nuestra Misión
 
-Promover la innovación tecnológica y el desarrollo sostenible en el Caquetá, creando oportunidades para que los jóvenes de la región山区 puedan transformar su futuro con tecnología.
+> *"Juntos Sí, Solos No. La Voluntad es Fuerza!"*
+
+Construimos un mundo mejor, fortalecemos el tejido social en comunidades donde todos tienen la oportunidad de contribuir y recibir.
 
 ---
 
@@ -167,21 +169,26 @@ DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrá
 
 ---
 
-## 📍 Ubicación de la Fundación (Por Definir)
+## 📍 Sede Principal
 
-- **Dirección:** Por definir
-- **Ciudad:** Por definir
-- **Departamento:** Caquetá, Colombia
+- **Ciudad:** Medellín, Colombia
+- **Presencia en:** Caquetá, Bogotá
 
 ---
 
-## 📧 Contacto (Por Definir)
+## 📧 Contacto
 
-- **Correo:** Por definir
-- **Teléfono:** Por definir
-- ** WhatsApp:** Por definir
-- **Redes Sociales:** Por definir
-- **Web:** Por definir
+- **📱 Teléfono:** +57 311 612 4993
+- **📧 Email:** [Por definir - revisar sitio oficial]
+- **🌐 Web:** www.promitierra.org
+
+### Redes Sociales
+
+- **Facebook:** @promitierra
+- **Twitter:** @promitierra_fun
+- **Instagram:** @promitierra
+- **WhatsApp:** [Envíanos un mensaje](https://wa.me/message/SBDTEPUTLDLNP1)
+- **Linktree:** [linktr.ee/promitierra](https://linktr.ee/promitierra)
 
 ---
 
