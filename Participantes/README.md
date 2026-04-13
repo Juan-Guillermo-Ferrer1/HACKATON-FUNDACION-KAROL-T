@@ -9,7 +9,6 @@ Esta página contiene las listas actualizadas de **equipos inscritos** y **perso
 | # | Equipo | Integrantes | Institución | Edades | Skills | Correo | Categoría | Experiencia | Fecha |
 |---|--------|-------------|-------------|--------|--------|--------|-----------|-------------|-------|
 | 1 | Escuadron Petro | Juan Ferrer | Uni Amazonia | 17,16,18 | Nuevo | juangasca4444@gmail.com | Intermedio | Básica | 2026-04-13 |
-| 2 | jkhjkhkjhjkhkjh | jkhkjhjkhkjhjkhkjhkjh | Uni Amazonia | 17,16,18 | Nuevo | juangasca4444@gmail.com | Intermedio | Intermedia | 2026-04-13 |
 
 *Esta lista se actualiza automáticamente cuando un equipo se registra mediante un issue.*
 
