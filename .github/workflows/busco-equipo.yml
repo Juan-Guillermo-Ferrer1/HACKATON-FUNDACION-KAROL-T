@@ -125,46 +125,65 @@ jobs:
             print(f"Error saving JSON: {e}")
             exit(1)
 
-          readme_content = "# Busco Equipo\n\n| # | Nombre | Tipo | Rol | Skills | Institución | Edad | Correo |\n|---|--------|------|-----|--------|-------------|------|--------|\n"
+          # Read current teams data
+          teams_data = []
+          try:
+            with open('Participantes/participantes.json', 'r') as f:
+              teams_data = json.load(f)
+          except:
+            teams_data = []
+
+          # Generate teams table
+          equipos_table = "| # | Equipo | Integrantes | Institución | Edades | Skills | Correo | Categoría | Experiencia | Fecha |\n|---|--------|-------------|-------------|--------|--------|--------|-----------|-------------|-------|\n"
+          for i, p in enumerate(teams_data):
+            integrantes = ', '.join(p.get('integrantes', []))
+            fecha = p.get('fecha_inscripcion', '')[:10]
+            equipos_table += f"| {i+1} | {p.get('equipo', '')} | {integrantes} | {p.get('institucion', '')} | {p.get('edades', '')} | {p.get('skills', '')} | {p.get('correo', '')} | {p.get('categoria', '')} | {p.get('experiencia', '')} | {fecha} |\n"
+
+          equipos_table += "\n*Esta lista se actualiza automáticamente cuando un equipo se registra mediante un issue.*\n"
+
+          # Generate busco table
+          busco_table = "| # | Nombre | Tipo | Rol | Skills | Institución | Edad | Correo |\n|---|--------|------|-----|--------|-------------|------|--------|\n"
           for i, p in enumerate(existing):
             tipo_texto = '🔽 Busca equipo' if p.get('tipo') == 'equipo' else '🔼 Tiene equipo'
-            readme_content += f"| {i+1} | {p.get('nombre', '')} | {tipo_texto} | {p.get('rol', '')} | {p.get('skills', '')} | {p.get('institucion', '')} | {p.get('edad', '')} | {p.get('correo', '')} |\n"
+            busco_table += f"| {i+1} | {p.get('nombre', '')} | {tipo_texto} | {p.get('rol', '')} | {p.get('skills', '')} | {p.get('institucion', '')} | {p.get('edad', '')} | {p.get('correo', '')} |\n"
 
-          readme_content += "\n## Descripciones\n\n"
+          busco_table += "\n## 📝 Descripciones Detalladas\n\n### Descripciones de quienes buscan equipo:\n\n"
           for p in existing:
             if p.get('descripcion'):
-              readme_content += f"### {p.get('nombre', '')}\n{p.get('descripcion', '')}\n\n"
+              busco_table += f"### {p.get('nombre', '')}\n{p.get('descripcion', '')}\n\n"
 
-          readme_content += "\n*Esta lista se actualiza automáticamente. Para contactar, usa el correo proporcionado.*\n"
+          busco_table += "*Esta lista se actualiza automáticamente. Para contactar, usa el correo proporcionado.*\n"
 
-          # Write busco table to temporary file
+          # Generate complete README
+          readme_content = '# 👥 Participantes del Hackatón\n\n'
+          readme_content += 'Esta página contiene las listas actualizadas de **equipos inscritos** y **personas buscando compañeros** para el Hackatón.\n\n'
+          readme_content += '---\n\n'
+          readme_content += '## 🏆 Equipos Inscritos\n\n'
+          readme_content += equipos_table
+          readme_content += '\n---\n\n'
+          readme_content += '## 🤝 Busco Compañeros\n\n'
+          readme_content += busco_table
+          readme_content += '\n---\n\n'
+          readme_content += '## 📋 ¿Cómo aparecen aquí?\n\n'
+          readme_content += '- **Equipos inscritos**: Se registran desde la página web del Hackatón\n'
+          readme_content += '- **Busco compañeros**: Se publican desde la pestaña "Busco Compañeros" de la página web\n\n'
+          readme_content += '**¿Quieres inscribirte o buscar compañeros?** Visita: [página del Hackatón](https://juan-guillermo-ferrer1.github.io/HACKATON-FUNDACION-PROMITIERRA/)\n\n'
+          readme_content += '---\n\n'
+          readme_content += '*Fundación ProMiTierra - Innovación con Sentido Humano*\n'
+
           try:
-            with open('/tmp/busco_table.md', 'w') as f:
+            with open('Participantes/README.md', 'w') as f:
               f.write(readme_content)
-            print("Busco table written to temp file")
+            print("README updated successfully")
           except Exception as e:
-            print(f"Error writing temp file: {e}")
+            print(f"Error writing README: {e}")
             exit(1)
 
           print(f"Total publicaciones: {len(existing)}")
           EOF
 
-      - name: Update README with busco table
-        run: |
-          # Replace the busco section in README.md
-          if [ -f "Participantes/README.md" ]; then
-            # Use awk to replace content between markers
-            awk '
-            BEGIN { in_section = 0; printed = 0 }
-            /^## 🤝 Busco Compañeros$/ { in_section = 1; print; next }
-            /^## 📝 Descripciones Detalladas$/ && in_section == 1 && !printed {
-              print ""; system("cat /tmp/busco_table.md"); print ""; printed = 1; next
-            }
-            /^---$/ && in_section == 1 && printed { in_section = 0 }
-            in_section == 0 || /^## 🤝 Busco Compañeros$/ { print }
-            ' Participantes/README.md > /tmp/updated_readme.md
-            mv /tmp/updated_readme.md Participantes/README.md
-          fi
+
 
       - name: Commit and push changes
         run: |
