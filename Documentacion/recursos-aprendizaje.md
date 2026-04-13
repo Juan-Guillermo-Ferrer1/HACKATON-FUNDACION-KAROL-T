@@ -1,95 +1,262 @@
-# Recursos de Aprendizaje para Principiantes
+# 📚 Recursos de Aprendizaje para Principiantes
 
 <p align="center">
   <img src="../.github/logos/python.png" height="50"> &nbsp;&nbsp;
-  <img src="../.github/logos/vscode.png" height="50"> &nbsp;&nbsp;
-  <img src="../.github/logos/github.png" height="50">
+  <img src="../.github/logos/nodejs.png" height="50"> &nbsp;&nbsp;
+  <img src="../.github/logos/github.png" height="50"> &nbsp;&nbsp;
+  <img src="../.github/logos/docker.png" height="50">
 </p>
 
-Colección de videos y tutoriales en español para aprender a programar y usar las herramientas necesarias.
+> **¡No necesitas ser un experto!** Esta guía te ayudará a aprender paso a paso todo lo necesario para participar en el Hackatón.
+
+## 🎯 ¿Por dónde empezar?
+
+Si eres **completamente principiante**, sigue este orden:
+
+1. **Semana 1:** Fundamentos de programación (elige Python o JavaScript)
+2. **Semana 2:** Instalar herramientas y configurar tu entorno
+3. **Semana 3:** Git y GitHub para compartir tu código
+4. **Semana 4:** Tu primer proyecto simple con IA o automatización
 
 ---
 
-## 🎬 Fundamentos de Programación
+## 🐍 Python - Tu primer lenguaje
 
-### Introducción a la Programación
-- [Qué es programación y cómo empezar](https://www.youtube.com/watch?v=zBct87mzj-Y)
-- [Lógica de programación básica](https://www.youtube.com/watch?v=UKn-6uH3lT4)
+### 📺 Cursos Completos en Español
+- **[Python desde cero - Programador X](https://www.youtube.com/watch?v=Kp4Mvapo5kc)** ⭐ Recomendado
+  - 8 horas, paso a paso, muy didáctico para principiantes absolutos
+- **[Curso Python - Fazt](https://www.youtube.com/watch?v=6Fl8gV0g3j8)**
+  - 4 horas, enfoque práctico con ejemplos reales
+- **[Python para IA - freeCodeCamp](https://www.freecodecamp.org/espanol/news/aprende-python-gratis-con-este-curso-completo-de-14-horas/)**
+  - 14 horas, enfocado en ciencia de datos e IA
 
-### Python (Ideal para principiantes)
-- [Curso Python desde cero - Píldoras Informáticas](https://www.youtube.com/playlist?list=PLU8oalHdARImpF7oXLeMvG0HZz6uE0f1K)
-- [Python para principiantes - Fazt](https://www.youtube.com/watch?v=6Fl8gV0g3j8)
+### 🎮 Proyectos para practicar Python
+- **Calculadora simple:** Variables, operaciones matemáticas
+- **Juego de adivinar números:** Condicionales y loops
+- **Lista de tareas (ToDo):** Archivos, funciones, listas
+- **Analizador de texto:** Strings, diccionarios, conteo de palabras
 
----
-
-## 🔧 Visual Studio Code
-
-### Primeros Pasos
-- [Instalar y configurar VS Code](https://www.youtube.com/watch?v=9C0d0Zt3P5M)
-- [Tutorial básico de VS Code](https://www.youtube.com/watch?v=rajap-P2eV0)
-
-### Extensiones Esenciales
-- [Extensiones recomendadas para VS Code](https://www.youtube.com/watch?v=ZwdNjf3qW6U)
-- [Las 10 extensiones que DEBES tener](https://www.youtube.com/watch?v=4N3Z9qC_v1I)
-
----
-
-## 📦 GitHub
-
-### Instalación y Configuración
-- [Instalar Git en Windows](https://www.youtube.com/watch?v=maw0KkWJYMI)
-- [Configurar Git por primera vez](https://www.youtube.com/watch?v=Y9aY6dNOqpw)
-
-### Uso de GitHub
-- [Qué es GitHub y cómo crear una cuenta](https://www.youtube.com/watch?v=7gL8O9J5zQw)
-- [Crear tu primer repositorio](https://www.youtube.com/watch?v=1i1t2T3p4P8)
-- [Subir proyecto a GitHub](https://www.youtube.com/watch?v=CPjY8RvhP2M)
-
-### Colaboración
-- [Agregar colaboradores a un proyecto](https://www.youtube.com/watch?v=ba8Y6K2R7cI)
-- [Trabajar con repositoriosfork y pull requests](https://www.youtube.com/watch?v=_JqDB4g1BQM)
-- [Flujo de trabajo en equipo con Git](https://www.youtube.com/watch?v=Lg_jY1_Dc4c)
+### 🛠️ ¿Por qué Python?
+- Sintaxis simple y legible (como escribir en inglés)
+- Excelente para IA y automatización
+- Gran comunidad y muchos recursos gratuitos
+- Usado por Google, Netflix, Instagram
 
 ---
 
-## 🐙 Comandos Git Esenciales
+## 🌐 JavaScript - Para páginas web interactivas
 
-### Tutorial Visual
-- [Git desde cero - Tutorial interactivo](https://www.youtube.com/watch?v=HiXL2LKyHpY)
-- [Los comandos más usados](https://www.youtube.com/watch?v=jvQjw-Jz4pQ)
+### 📺 Cursos básicos
+- **[JavaScript desde cero - Fazt](https://www.youtube.com/watch?v=RqQ1d1qEWlE)**
+  - 3 horas, fundamentos esenciales
+- **[JS moderno (ES6+) - Carlos Azaustre](https://www.youtube.com/watch?v=XI5OI3gK6bE)**
+  - JavaScript actual con las últimas características
 
-### Comandos básicos
+### 🎯 Por qué JavaScript?
+- Lenguaje de la web (todas las páginas interactivas)
+- Fácil de empezar combinándolo con HTML/CSS
+- Una sola herramienta para frontend y backend (Node.js)
+- Gran comunidad y frameworks modernos (React, Vue)
+
+### 🎨 Tu primer proyecto web
+1. Página personal con HTML/CSS
+2. Calculadora interactiva
+3. Lista de tareas con JavaScript
+4. API simple con Node.js
+
+---
+
+## 🤖 Introducción a la Inteligencia Artificial
+
+### 📺 ¿Qué es la IA y cómo funciona?
+- **[¿Qué es la IA? Explicación simple](https://www.youtube.com/watch?v=5NgkMg-wJBw)**
+- **[IA vs Machine Learning vs Deep Learning](https://www.youtube.com/watch?v=7W8A2x2iZvE)**
+
+### 🛠️ Herramientas de IA que puedes usar (todas gratuitas)
+- **ChatGPT/OpenAI:** Para generar texto, código, ideas y explicaciones
+- **Ollama:** Ejecutar modelos de IA en tu propia computadora (no necesitas internet)
+- **Hugging Face:** Biblioteca con miles de modelos pre-entrenados
+- **LangChain:** Framework para conectar diferentes AIs y crear aplicaciones
+
+### 🚀 Tu primer proyecto con IA
+1. **Chatbot conversacional:** Pregunta-respuesta básica
+2. **Generador de historias:** Crea cuentos personalizados con IA
+3. **Analizador de sentimientos:** Detecta si un texto es positivo/negativo
+4. **Clasificador de imágenes:** Identifica objetos en fotos
+5. **Resumidor automático:** Resume textos largos
+
+---
+
+## ⚙️ Automatización - Haz que las máquinas trabajen por ti
+
+### 📺 Introducción a la automatización
+- **[¿Qué es RPA? Automatización de procesos](https://www.youtube.com/watch?v=example)**
+- **[Automatización con Python - Básico](https://www.youtube.com/watch?v=example)**
+
+### 🛠️ Herramientas para automatizar
+- **Python + Selenium:** Automatizar navegadores web (scraping, testing)
+- **n8n:** Interfaz visual drag-and-drop (muy fácil para principiantes)
+- **Zapier/Make:** Conectar diferentes servicios sin programar
+- **Scripts en Bash:** Automatizar tareas del sistema operativo
+
+### 💡 Ideas de automatización para principiantes
+- **Backup automático de archivos importantes**
+- **Enviar correos automáticos de recordatorio**
+- **Descargar y organizar archivos de internet**
+- **Organizar fotos por fecha y ubicación**
+- **Generar reportes automáticamente desde datos**
+
+---
+
+## 💻 Configura tu entorno de desarrollo
+
+### 🛠️ Instalar VS Code (Editor de código recomendado)
+1. **Descarga:** [code.visualstudio.com](https://code.visualstudio.com/)
+2. **Instala:** Sigue los pasos del instalador (es muy simple)
+3. **Configura:** Elige tu tema oscuro y tamaño de fuente cómodo
+
+#### 📺 Videos de instalación y primeros pasos
+- **[Instalar VS Code - Programador X](https://www.youtube.com/watch?v=example)**
+- **[Primeros pasos en VS Code - Fazt](https://www.youtube.com/watch?v=example)**
+
+### ⚡ Extensiones recomendadas para principiantes
+
+**📦 Esenciales (instala estas primero):**
+- **Python (Microsoft)** - Para programar en Python
+- **JavaScript (ES6)** - Para JavaScript moderno
+- **Prettier** - Formatear código automáticamente (importante!)
+- **GitLens** - Mejor integración con Git
+- **Live Server** - Ver páginas web en vivo mientras programas
+
+**🎨 Para que sea más fácil de usar:**
+- **Bracket Pair Colorizer** - Colores para paréntesis y corchetes
+- **Indent Rainbow** - Colores para la indentación
+- **Error Lens** - Muestra errores claramente en el código
+
+### 🐧 Instalar Python (si elegiste Python)
+1. **Descarga:** [python.org](https://python.org) - Elige la versión 3.11 o 3.12
+2. **Instala:** Marca "Add Python to PATH" durante la instalación
+3. **Verifica:** Abre terminal y escribe `python --version`
+
+---
+
+## 📦 GitHub - Comparte y colabora
+
+### 🐙 ¿Qué es Git y GitHub?
+- **Git:** Sistema para controlar versiones de tu código
+- **GitHub:** Plataforma web donde guardas y compartes proyectos
+
+### 📺 Tutoriales paso a paso
+- **[Git y GitHub desde cero - Programador X](https://www.youtube.com/watch?v=example)**
+- **[Crear cuenta y primer repo - Fazt](https://www.youtube.com/watch?v=example)**
+- **[Flujo completo: código → GitHub](https://www.youtube.com/watch?v=example)**
+
+### ⚡ Comandos Git más usados
+```bash
+# Configurar tu nombre y email (una sola vez)
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu@email.com"
+
+# Crear repositorio local
+git init
+
+# Agregar archivos
+git add .
+
+# Guardar cambios
+git commit -m "Descripción de los cambios"
+
+# Subir a GitHub
+git push
+
+# Ver estado
+git status
+
+# Descargar cambios
+git pull
 ```
-git init          # Inicializar repositorio
-git add .         # Agregar archivos
-git commit -m ""  # Guardar cambios
-git push          # Subir a GitHub
-git pull          # Descargar cambios
-git status        # Ver estado
+
+### 🚀 Proceso para subir tu proyecto al Hackatón
+1. Crea cuenta gratuita en [github.com](https://github.com)
+2. Haz clic en "New repository"
+3. Dale un nombre descriptivo (ej: `mi-proyecto-hackaton`)
+4. Marca "Public" (para que sea visible)
+5. Sube tu código siguiendo los comandos de arriba
+
+---
+
+## 🐳 Docker - Ejecuta cualquier aplicación
+
+### 📺 ¿Qué es Docker y por qué es útil?
+- **[Docker explicado en 5 minutos](https://www.youtube.com/watch?v=example)**
+- **[Instalar Docker - Guía completa](https://www.youtube.com/watch?v=example)**
+
+### 🎯 Por qué Docker para el Hackatón?
+- Tu proyecto funciona igual en cualquier computadora
+- Fácil compartir con otros desarrolladores
+- La Fundación puede probar tu proyecto fácilmente
+- Profesional y moderno
+
+### 🚀 Docker básico para principiantes
+```dockerfile
+# Dockerfile simple para aplicación Python
+FROM python:3.11-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+CMD ["python", "app.py"]
 ```
 
 ---
 
-## 📚 Más Recursos
+## 📚 Más Recursos y Comunidad
 
-### Canales Recomendados en Español
+### 🏆 Plataformas de aprendizaje gratuitas
+- **[freeCodeCamp Español](https://www.freecodecamp.org/espanol/)** - Cursos completos con certificados
+- **[Codecademy](https://www.codecademy.com/)** - Práctica interactiva
+- **[Platzi](https://platzi.com/)** - Cursos en español (algunos gratuitos)
+
+### 📺 Canales de YouTube recomendados
 - **Fazt** - Tutoriales prácticos de programación
 - **Píldoras Informáticas** - Cursos completos y detallados
-- **Midudev** - Desarrollo web moderno
+- **Midudev** - Desarrollo web moderno con JavaScript
 - **Soy Dalto** - Explicaciones claras y visuales
-- **Programador X** - Git y GitHub desde cero
+- **Programador X** - Git, GitHub y desarrollo desde cero
 
-### Plataformas de Práctica
-- [freeCodeCamp Español](https://www.freecodecamp.org/espanol/)
-- [Codecademy](https://www.codecademy.com/)
-- [Platzi](https://platzi.com/)
+### 💬 Comunidades para preguntar
+- **Discord de freeCodeCamp** - Pregunta en español
+- **Reddit r/learnprogramming** - Comunidad internacional
+- **Stack Overflow** - Para preguntas técnicas específicas
+- **Issues de este repo** - Pregunta sobre el Hackatón
 
 ---
 
-*Si eres principiante, te recomendamos empezar con:*
-1. **Semana 1:** Fundamentos de programación (Python)
-2. **Semana 2:** Instalar VS Code y extensiones
-3. **Semana 3:** Crear cuenta en GitHub
-4. **Semana 4:** Subir tu primer proyecto
+## 🎯 Checklist para principiantes
 
-¡Ánimo! Todos empiezan desde cero.
+**Antes de empezar el Hackatón:**
+- [ ] Instalar Python O JavaScript
+- [ ] Instalar VS Code y extensiones básicas
+- [ ] Crear cuenta en GitHub
+- [ ] Hacer tu primer "Hola Mundo"
+- [ ] Subir un proyecto simple a GitHub
+
+**Durante el Hackatón:**
+- [ ] Hacer commits frecuentes (cada cambio importante)
+- [ ] Documentar tu código con comentarios
+- [ ] Probar tu aplicación antes de entregar
+- [ ] Pedir ayuda si algo no funciona
+
+**Después del Hackatón:**
+- [ ] Mejorar tu proyecto basado en feedback
+- [ ] Agregarlo a tu portafolio personal
+- [ ] Compartirlo en redes sociales
+- [ ] Seguir aprendiendo nuevas tecnologías
+
+---
+
+¡Ánimo! Todos empezamos desde cero. Lo importante es la **constancia y la curiosidad**. Si dedicas tiempo diario, en unas semanas podrás crear proyectos increíbles. 🚀
+
+¿Dudas? Crea un Issue usando la plantilla "Pregunta / Duda" en este repositorio.

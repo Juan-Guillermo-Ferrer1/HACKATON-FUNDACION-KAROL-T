@@ -11,9 +11,10 @@
 > ⚠️ **Antes de inscribirte:** Lee las [reglas del evento](./Documentacion/reglas.md) y los [términos](./Normatividad/CONSENTIMIENTO.md)
 
 ### Opción 1: Desde GitHub
-1. **Inscribete:** Ve a [Issues](./Inscripcion%20-%20Entrega/) y usa la plantilla "Inscripción Participante"
-2. **Desarrolla:** Crea tu proyecto usando las tecnologías que prefieras
-3. **Entrega:** Usa la plantilla "Entrega de Solución" cuando termines
+1. **Inscribete:** Ve a [Issues](./inscripcion-entrega/) y usa la plantilla "Inscripción Participante"
+2. **Busca equipo:** Si no tienes compañeros, usa "Busco Equipo"
+3. **Desarrolla:** Crea tu proyecto usando las tecnologías que prefieras
+4. **Entrega:** Usa la plantilla "Entrega de Solución" cuando termines
 
 ### Opción 2: Página Web (Más fácil)
 Insccríbete de forma rápida y visual:
@@ -150,8 +151,8 @@ DockPloy es nuestra plataforma de orquestación. Los proyectos destacados podrá
 |--------|-------------|
 | 📄 [README.md](./README.md) | Este archivo - Información general |
 | 📚 [Documentacion](./Documentacion/) | Guías técnicas, reglas, evaluación |
-| 📝 [Inscripcion - Entrega](./Inscripcion%20-%20Entrega/) | Plantillas para inscribirse y entregar |
-| 👥 [Participantes](./Participantes/) | Lista de equipos inscritos |
+| 📝 [inscripcion-entrega](./inscripcion-entrega/) | Plantillas para inscribirse y entregar |
+| 👥 [Participantes](./Participantes/) | Lista de equipos inscritos y búsqueda de compañeros |
 | 📦 [Plantillas](./Plantillas/) | Plantilla opcional para tu proyecto |
 
 ---

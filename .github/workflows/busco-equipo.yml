@@ -1,0 +1,127 @@
+name: Busco Equipo
+
+on:
+  issues:
+    types: [opened, edited, closed]
+
+jobs:
+  busco-equipo:
+    if: startsWith(github.event.issue.title, '[BUSCO-EQUIPO]') || startsWith(github.event.issue.title, '[busco-equipo]')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+      ACTION: ${{ github.event.action }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Extract data and update JSON
+        run: |
+          printf '%s' "${{ github.event.issue.body }}" > /tmp/issue_body.txt
+
+          python3 << 'EOF'
+          import json
+          import os
+          from pathlib import Path
+
+          body = Path("/tmp/issue_body.txt").read_text()
+          title = "${{ github.event.issue.title }}"
+          action = "${{ github.event.action }}"
+
+          nombre = title.replace('[BUSCO-EQUIPO]', '').replace('[busco-equipo]', '').strip()
+
+          filepath = 'Participantes/busco-equipo.json'
+          existing = []
+          if os.path.exists(filepath):
+            with open(filepath, 'r') as f:
+              existing = json.load(f)
+
+          if action == 'closed':
+            existing = [p for p in existing if p.get('nombre', '').lower() != nombre.lower()]
+            print(f"Publicación eliminada: {nombre}")
+          else:
+            data = {
+              'nombre': nombre,
+              'tipo': '',
+              'rol': '',
+              'skills': '',
+              'correo': '',
+              'institucion': '',
+              'edad': '',
+              'descripcion': '',
+              'fecha': '${{ github.event.issue.created_at }}',
+              'issue_url': '${{ github.event.issue.html_url }}'
+            }
+
+            field_mapping = {
+              'Tipo': 'tipo',
+              'Rol': 'rol',
+              'Skills': 'skills',
+              'Correo': 'correo',
+              'Institución': 'institucion',
+              'Edad': 'edad',
+              'Descripción': 'descripcion'
+            }
+
+            current_field = None
+            for line in body.split('\n'):
+              line = line.strip()
+              if not line:
+                continue
+              if line.startswith('## '):
+                field_name = line.replace('## ', '')
+                current_field = field_mapping.get(field_name, None)
+              elif current_field and line and not line.startswith('---'):
+                if current_field == 'tipo':
+                  # Convertir respuesta legible a valor interno
+                  if 'unirme a un equipo' in line.lower():
+                    data[current_field] = 'equipo'
+                  elif 'busco miembros' in line.lower():
+                    data[current_field] = 'miembros'
+                  else:
+                    data[current_field] = line
+                else:
+                  data[current_field] = line
+
+            existing = [p for p in existing if p.get('nombre', '').lower() != nombre.lower()]
+            existing.append(data)
+            print(f"Publicación guardada: {nombre}")
+
+          with open(filepath, 'w') as f
+            json.dump(existing, f, indent=2, ensure_ascii=False)
+
+          readme_content = "# Busco Equipo\n\n| # | Nombre | Tipo | Rol | Skills | Institución | Edad | Correo |\n|---|--------|------|-----|--------|-------------|------|--------|\n"
+          for i, p in enumerate(existing):
+            tipo_texto = '🔽 Busca equipo' if p.get('tipo') == 'equipo' else '🔼 Tiene equipo'
+            readme_content += f"| {i+1} | {p.get('nombre', '')} | {tipo_texto} | {p.get('rol', '')} | {p.get('skills', '')} | {p.get('institucion', '')} | {p.get('edad', '')} | {p.get('correo', '')} |\n"
+
+          readme_content += "\n## Descripciones\n\n"
+          for p in existing:
+            if p.get('descripcion'):
+              readme_content += f"### {p.get('nombre', '')}\n{p.get('descripcion', '')}\n\n"
+
+          readme_content += "\n*Esta lista se actualiza automáticamente. Para contactar, usa el correo proporcionado.*\n"
+
+          with open('Participantes/README_BUSCO.md', 'w') as f:
+            f.write(readme_content)
+
+          print(f"Total publicaciones: {len(existing)}")
+          EOF
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add Participantes/busco-equipo.json Participantes/README_BUSCO.md 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "Actualizar busco-equipo de issue #${{ github.event.issue.number }}"
+          git push

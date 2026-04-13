@@ -282,6 +282,41 @@
         @keyframes scaleIn { from{transform:scale(.85);opacity:0} to{transform:scale(1);opacity:1} }
         @keyframes fadeIn { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
 
+        /* ── Tabs ── */
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--card-bg);
+            border: 1px solid rgba(231,34,242,.2);
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 12px 16px;
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .25s ease;
+            border-right: 1px solid rgba(231,34,242,.1);
+        }
+        .tab-btn:last-child { border-right: none; }
+        .tab-btn.active {
+            background: var(--neon-purple);
+            color: white;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,.2);
+        }
+        .tab-btn:hover:not(.active) {
+            background: rgba(231,34,242,.1);
+            color: var(--neon-cyan);
+        }
+
+        /* ── Form visibility ── */
+        .form-container.hidden { display: none; }
+
         /* ── Responsive ── */
         @media (max-width: 600px) {
             .form-row { grid-template-columns: 1fr; }
@@ -291,6 +326,8 @@
             .radio-group { flex-direction: column; }
             .info-bar { gap: 10px; padding: 16px 18px; }
             .modal-content { padding: 36px 24px; }
+            .tabs { margin-bottom: 16px; }
+            .tab-btn { font-size: 13px; padding: 10px 12px; }
         }
     </style>
 </head>
@@ -363,97 +400,190 @@
     </div>
 
     <!-- Registration form -->
-    <form class="form-container" id="registroForm" novalidate>
-        <div class="section-title">📋 Datos del Equipo</div>
-
-        <div class="form-group">
-            <label for="equipo">Nombre del Equipo <span class="required">*</span></label>
-            <input type="text" id="equipo" name="equipo"
-                   placeholder="Ej: Los Innovadores del Caquetá" required
-                   autocomplete="off">
+        <!-- Navigation tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('registro')">📝 Inscripción de Equipo</button>
+            <button class="tab-btn" onclick="showTab('busco')">👥 Busco Compañeros</button>
         </div>
 
-        <div class="form-group">
-            <label for="integrantes">Integrantes <span class="required">*</span> — uno por línea</label>
-            <textarea id="integrantes" name="integrantes" rows="4"
-                      placeholder="Juan Pérez&#10;María López&#10;Carlos García" required></textarea>
-        </div>
+        <!-- Registration Form -->
+        <form class="form-container" id="registroForm" novalidate>
+            <div class="section-title">📋 Datos del Equipo</div>
 
-        <div class="form-row">
             <div class="form-group">
-                <label for="correo">Correo de contacto <span class="required">*</span></label>
-                <input type="email" id="correo" name="correo"
-                       placeholder="tu@email.com" required>
+                <label for="equipo">Nombre del Equipo <span class="required">*</span></label>
+                <input type="text" id="equipo" name="equipo"
+                       placeholder="Ej: Los Innovadores del Caquetá" required
+                       autocomplete="off">
             </div>
+
             <div class="form-group">
-                <label for="institucion">Institución <span class="required">*</span></label>
-                <input type="text" id="institucion" name="institucion"
-                       placeholder="Universidad / Colegio" required>
+                <label for="integrantes">Integrantes <span class="required">*</span> — uno por línea</label>
+                <textarea id="integrantes" name="integrantes" rows="4"
+                          placeholder="Juan Pérez&#10;María López&#10;Carlos García" required></textarea>
             </div>
-        </div>
 
-        <div class="form-row">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="correo">Correo de contacto <span class="required">*</span></label>
+                    <input type="email" id="correo" name="correo"
+                           placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="institucion">Institución <span class="required">*</span></label>
+                    <input type="text" id="institucion" name="institucion"
+                           placeholder="Universidad / Colegio" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="edades">Edades del equipo</label>
+                    <input type="text" id="edades" name="edades"
+                           placeholder="15, 16, 17">
+                </div>
+                <div class="form-group">
+                    <label for="skills">Skills / Tecnologías</label>
+                    <input type="text" id="skills" name="skills"
+                           placeholder="Python, JavaScript, n8n…">
+                </div>
+            </div>
+
+            <div class="section-title" style="margin-top:24px;">🏆 Categoría</div>
+
             <div class="form-group">
-                <label for="edades">Edades del equipo</label>
-                <input type="text" id="edades" name="edades"
-                       placeholder="15, 16, 17">
+                <label>Nivel del equipo <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="categoria" value="Principiante" required>
+                        <span>🌱 Principiante</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="categoria" value="Intermedio">
+                        <span>🌿 Intermedio</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="categoria" value="Avanzado">
+                        <span>🌳 Avanzado</span>
+                    </label>
+                </div>
             </div>
+
             <div class="form-group">
-                <label for="skills">Skills / Tecnologías</label>
-                <input type="text" id="skills" name="skills"
-                       placeholder="Python, JavaScript, n8n…">
+                <label>Experiencia programando</label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="experiencia" value="Ninguna">
+                        <span>❌ Ninguna</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="experiencia" value="Básica">
+                        <span>🔰 Básica</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="experiencia" value="Intermedia">
+                        <span>💻 Intermedia</span>
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="section-title" style="margin-top:24px;">🏆 Categoría</div>
+            <button type="submit" class="btn-submit">🚀 Inscribirse al Hackathon</button>
 
-        <div class="form-group">
-            <label>Nivel del equipo <span class="required">*</span></label>
-            <div class="radio-group">
-                <label class="radio-item">
-                    <input type="radio" name="categoria" value="Principiante" required>
-                    <span>🌱 Principiante</span>
-                </label>
-                <label class="radio-item">
-                    <input type="radio" name="categoria" value="Intermedio">
-                    <span>🌿 Intermedio</span>
-                </label>
-                <label class="radio-item">
-                    <input type="radio" name="categoria" value="Avanzado">
-                    <span>🌳 Avanzado</span>
-                </label>
+            <p class="note">
+                ℹ️ Al enviar serás redirigido a GitHub para confirmar y enviar el formulario de inscripción (requiere cuenta GitHub).
+            </p>
+        </form>
+
+        <!-- Busco Equipo Form -->
+        <form class="form-container hidden" id="buscoForm" novalidate>
+            <div class="section-title">👥 Busco Compañeros de Equipo</div>
+
+            <p style="color: var(--text-color); margin-bottom: 20px; opacity: 0.9;">
+                ¿No tienes equipo completo? ¡Publica tu perfil y encuentra compañeros con intereses similares!
+            </p>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="busco-nombre">Tu nombre <span class="required">*</span></label>
+                    <input type="text" id="busco-nombre" name="busco-nombre"
+                           placeholder="Juan Pérez" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="busco-correo">Correo de contacto <span class="required">*</span></label>
+                    <input type="email" id="busco-correo" name="busco-correo"
+                           placeholder="tu@email.com" required>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label>Experiencia programando</label>
-            <div class="radio-group">
-                <label class="radio-item">
-                    <input type="radio" name="experiencia" value="Ninguna">
-                    <span>❌ Ninguna</span>
-                </label>
-                <label class="radio-item">
-                    <input type="radio" name="experiencia" value="Básica">
-                    <span>🔰 Básica</span>
-                </label>
-                <label class="radio-item">
-                    <input type="radio" name="experiencia" value="Intermedia">
-                    <span>💻 Intermedia</span>
-                </label>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="busco-institucion">Institución</label>
+                    <input type="text" id="busco-institucion" name="busco-institucion"
+                           placeholder="Universidad Nacional">
+                </div>
+                <div class="form-group">
+                    <label for="busco-edad">Edad</label>
+                    <input type="number" id="busco-edad" name="busco-edad"
+                           placeholder="16" min="10" max="99">
+                </div>
             </div>
-        </div>
 
-        <button type="submit" class="btn-submit">🚀 Inscribirse al Hackathon</button>
+            <div class="form-group">
+                <label>¿Qué buscas? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label class="radio-item">
+                        <input type="radio" name="busco-tipo" value="equipo" required>
+                        <span>🔽 Busco unirme a un equipo</span>
+                    </label>
+                    <label class="radio-item">
+                        <input type="radio" name="busco-tipo" value="miembros">
+                        <span>🔼 Tengo equipo, busco miembros</span>
+                    </label>
+                </div>
+            </div>
 
-        <p class="note">
-            ℹ️ Al enviar serás redirigido a GitHub para confirmar y enviar el formulario de inscripción (requiere cuenta GitHub).
-        </p>
-    </form>
+            <div class="form-group">
+                <label for="busco-rol">Tu rol preferido <span class="required">*</span></label>
+                <select id="busco-rol" name="busco-rol" required>
+                    <option value="">Selecciona un rol...</option>
+                    <option value="Desarrollador Frontend">🎨 Desarrollador Frontend (React, Vue, HTML/CSS)</option>
+                    <option value="Desarrollador Backend">⚙️ Desarrollador Backend (Node.js, Python, APIs)</option>
+                    <option value="Desarrollador IA">🤖 Desarrollador IA (Python, modelos ML)</option>
+                    <option value="Diseñador UX/UI">📱 Diseñador UX/UI</option>
+                    <option value="Analista de Datos">📊 Analista de Datos</option>
+                    <option value="DevOps">🐳 DevOps / Infraestructura</option>
+                    <option value="Marketing">📢 Marketing / Comunicación</option>
+                    <option value="Idea/Creativo">💡 Idea / Creativo</option>
+                    <option value="Cualquier rol">🔄 Cualquier rol</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="busco-skills">Tus skills / conocimientos</label>
+                <input type="text" id="busco-skills" name="busco-skills"
+                       placeholder="Python, JavaScript, diseño gráfico...">
+            </div>
+
+            <div class="form-group">
+                <label for="busco-descripcion">Cuéntanos sobre ti y tu idea</label>
+                <textarea id="busco-descripcion" name="busco-descripcion" rows="3"
+                          placeholder="Hola! Soy estudiante de ingeniería, me gusta Python y tengo una idea para automatizar procesos administrativos..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">📢 Publicar mi búsqueda</button>
+
+            <p class="note">
+                ℹ️ Tu publicación aparecerá en la lista de personas buscando equipo y se mantendrá hasta que encuentres compañeros o la elimines.
+            </p>
+        </form>
 
     <!-- Quick links -->
     <div class="links-bar">
         <a href="https://github.com/Juan-Guillermo-Ferrer1/HACKATON-FUNDACION-PROMITIERRA/blob/main/Participantes/README.md" target="_blank">
-            👥 Ver participantes registrados
+            👥 Ver equipos inscritos
+        </a>
+        <a href="https://github.com/Juan-Guillermo-Ferrer1/HACKATON-FUNDACION-PROMITIERRA/blob/main/Participantes/README_BUSCO.md" target="_blank">
+            🤝 Ver quienes buscan equipo
         </a>
         <a href="https://github.com/Juan-Guillermo-Ferrer1/HACKATON-FUNDACION-PROMITIERRA" target="_blank">
             📂 Ver repositorio
@@ -488,6 +618,18 @@
 <script>
     var REPO = 'Juan-Guillermo-Ferrer1/HACKATON-FUNDACION-PROMITIERRA';
 
+    // Tab switching
+    function showTab(tabName) {
+        // Update tab buttons
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        // Show/hide forms
+        document.querySelectorAll('.form-container').forEach(form => form.classList.add('hidden'));
+        document.getElementById(tabName + 'Form').classList.remove('hidden');
+    }
+
+    // Registration form handler
     document.getElementById('registroForm').addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -544,11 +686,74 @@
             + '&labels=inscripcion';
 
         window.open(url, '_blank');
-        showThankYouModal();
+        showThankYouModal('¡Inscripción enviada!', 'Se abrió GitHub con los datos pre-llenados. Confirma y envía el formulario.');
+        this.reset();
     });
 
-    function showThankYouModal() {
-        document.getElementById('thankYouModal').classList.add('active');
+    // Busco Equipo form handler
+    document.getElementById('buscoForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var nombre      = document.getElementById('busco-nombre').value.trim();
+        var correo      = document.getElementById('busco-correo').value.trim();
+        var institucion = document.getElementById('busco-institucion').value.trim();
+        var edad        = document.getElementById('busco-edad').value.trim();
+        var rol         = document.getElementById('busco-rol').value;
+        var skills      = document.getElementById('busco-skills').value.trim();
+        var descripcion = document.getElementById('busco-descripcion').value.trim();
+
+        var tipoInput = document.querySelector('input[name="busco-tipo"]:checked');
+        var tipo = tipoInput ? tipoInput.value : 'No especificado';
+
+        // Validate required
+        if (!nombre || !correo || !rol || !tipoInput) {
+            alert('Por favor completa los campos obligatorios marcados con *');
+            return;
+        }
+
+        // Build issue body for busco-equipo
+        var body = [
+            '## Nombre',
+            nombre,
+            '',
+            '## Tipo',
+            tipo === 'equipo' ? 'Busco unirme a un equipo' : 'Tengo equipo, busco miembros',
+            '',
+            '## Rol',
+            rol,
+            '',
+            '## Skills',
+            skills || 'No especificados',
+            '',
+            '## Correo',
+            correo,
+            '',
+            '## Institución',
+            institucion || 'No especificada',
+            '',
+            '## Edad',
+            edad || 'No especificada',
+            '',
+            '## Descripción',
+            descripcion || 'Sin descripción adicional'
+        ].join('\n');
+
+        var title = '[BUSCO-EQUIPO] - ' + nombre;
+        var url = 'https://github.com/' + REPO + '/issues/new'
+            + '?title=' + encodeURIComponent(title)
+            + '&body='  + encodeURIComponent(body)
+            + '&labels=busco-equipo';
+
+        window.open(url, '_blank');
+        showThankYouModal('¡Publicación enviada!', 'Se abrió GitHub con tu búsqueda de equipo. Confirma y envía el formulario.');
+        this.reset();
+    });
+
+    function showThankYouModal(title, message) {
+        var modal = document.getElementById('thankYouModal');
+        modal.querySelector('h2').textContent = title;
+        modal.querySelector('p').textContent = message;
+        modal.classList.add('active');
     }
 
     function closeThankYouModal() {
@@ -559,6 +764,7 @@
     function goToMain() {
         closeThankYouModal();
         document.getElementById('registroForm').reset();
+        document.getElementById('buscoForm').reset();
     }
 </script>
 </body>

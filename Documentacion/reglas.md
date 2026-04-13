@@ -1,45 +1,72 @@
 # 📜 Reglas del Hackatón - Fundación ProMiTierra
 
-> *"Este Hackathon es para TODO el público. Lo importante es tener ganas de aprender y crear."*
+<p align="center">
+  <img src="../.github/logos/ProMiTierra Logo.png" height="80">
+</p>
 
-## 1. ¿Quién Puede Participar?
+> *"Este Hackathon es para TODO el público. Si tienes una idea y ganas de aprender, ¡eres bienvenido!"*
 
-### ¡Todos pueden participar!
-- ✅ No importa la edad, género o ubicación
-- ✅ Puedes ser principiante, intermedio o avanzado
-- ✅ Lo importante es tener ganas de aprender y desarrollar tu idea
-- ✅ No necesitas ser experto en tecnología
-- ✅ Equipos de 2 a 4 personas (o individual)
+## 🎯 ¿Quién Puede Participar?
 
-### Registro
-1. Los participantes deben crear un repositorio público con su solución
-2. Abrir un Issue en este repositorio usando la plantilla "Entrega de Solución"
-3. Incluir: nombre(s), correo de contacto, URL del repositorio y descripción del proyecto
+### ¡Absolutamente TODO EL MUNDO!
+- ✅ **No importa tu edad** (15 años o 80 años, ¡todos pueden!)
+- ✅ **No importa tu género** o ubicación geográfica
+- ✅ **No importa tu experiencia** - principiante, intermedio o avanzado
+- ✅ **Lo único que necesitas:** Ganas de aprender y una idea para mejorar algo
+- ✅ **Equipos de 2 a 4 personas** (o puedes participar solo)
+
+### 💡 Tip para principiantes
+Si nunca has programado, ¡este es el momento perfecto! Tendrás mentores, tutoriales y toda la ayuda necesaria.
 
 ---
 
-## 2. Requisitos del Proyecto
+## 📝 Proceso de Registro (¡Muy sencillo!)
 
-### Estado del Proyecto
-- **Nuevo:** Proyecto creado específicamente para el hackatón
-- **Previo:** Proyecto existente que **NO** haya tenido usuarios reales ni sea un producto comercial establecido
-- Se permite usar librerías, frameworks y herramientas de código abierto
+### Opción 1: Registro Web (Recomendado - más fácil)
+1. Ve a la página principal del Hackatón
+2. Llena el formulario con datos de tu equipo
+3. Se abrirá automáticamente GitHub con todo pre-llenado
+4. Confirma y ¡listo!
 
-### Documentación Obligatoria
+### Opción 2: Registro Manual en GitHub
+1. Crea cuenta gratuita en [github.com](https://github.com) (si no tienes)
+2. Ve a la sección [Issues de este repo](../issues)
+3. Usa la plantilla "Inscripción Participante"
+4. Completa todos los campos
+5. Envía el formulario
+
+**Resultado:** Aparecerás automáticamente en la [lista de participantes](../Participantes/README.md)
+
+---
+
+## 🛠️ Requisitos del Proyecto
+
+### 📅 Estado del Proyecto
+- **Nuevo:** Proyecto creado específicamente para este Hackatón (¡ideal!)
+- **Previo:** Proyecto existente que **NO** haya tenido usuarios reales ni sea un producto comercial
+- **Permite usar:** Librerías, frameworks y herramientas de código abierto
+
+### 📚 Documentación Obligatoria (¡No te preocupes, es fácil!)
 Todo proyecto debe incluir:
-- [ ] `README.md` con:
-  - Título y descripción del proyecto
-  - Instrucciones de instalación
-  - Instructions de ejecución
-  - Tech stack utilizado
-  - Funcionalidades principales
-- [ ] Código funcional y probable
 
-### Contenido Prohibido
-- ❌ Lenguaje ofensivo o inapropiado
-- ❌ Contenido violento, discriminatorio o ilegal
-- ❌ Material con derechos de autor sin licencia
+#### ✅ README.md con:
+- **Título y descripción** del proyecto (¿qué hace? ¿para qué sirve?)
+- **Instrucciones de instalación** (paso a paso, como una receta)
+- **Instrucciones de ejecución** (cómo correr el proyecto)
+- **Tech stack utilizado** (qué lenguajes/frameworks usaste)
+- **Funcionalidades principales** (lista de características)
+
+#### ✅ Código que funcione
+- El proyecto debe ejecutarse sin errores
+- Las funcionalidades descritas deben estar implementadas
+- Repositorio público en GitHub
+
+### 🚫 Contenido Prohibido
+- ❌ Lenguaje ofensivo, discriminatorio o inapropiado
+- ❌ Contenido violento o ilegal
+- ❌ Material con derechos de autor sin licencia correspondiente
 - ❌ Malware, virus o código malicioso
+- ❌ Proyectos que violen leyes o regulaciones
 
 ---
 
@@ -74,14 +101,58 @@ Todo proyecto debe incluir:
 
 ---
 
-## 5. Categorías y Tech Stack
+## 🏆 Categorías de Participación
 
-### No hay restricciones de tecnología
-Los participantes pueden usar cualquier:
-- **Lenguaje:** Python, JavaScript, TypeScript, Java, C#, Go, Rust, etc.
-- **Framework:** React, Vue, Angular, Django, Spring, Express, etc.
-- **Base de Datos:** SQL, NoSQL, Firebase, etc.
-- **Plataforma:** Web, Móvil, Desktop, IoT, etc.
+### 🌱 Principiante
+- Primer Hackatón o poca experiencia programando
+- Proyectos simples pero funcionales
+- Enfoque en aprender y completar el proyecto
+
+### 🌿 Intermedio
+- Experiencia básica en programación
+- Proyectos con más funcionalidades
+- Uso de bases de datos o APIs
+
+### 🌳 Avanzado
+- Experiencia sólida en desarrollo
+- Proyectos complejos con múltiples tecnologías
+- Soluciones innovadoras y escalables
+
+---
+
+## 💻 Tecnologías Permitidas
+
+### 🎉 ¡No hay restricciones! Usa lo que te guste:
+
+#### Lenguajes de Programación
+- **Python** (ideal para principiantes e IA)
+- **JavaScript/Node.js** (web y aplicaciones)
+- **TypeScript** (JavaScript con tipos)
+- **Java, C#, Go, Rust** (para proyectos avanzados)
+
+#### Frameworks y Librerías
+- **Web:** React, Vue, Angular, Svelte
+- **Backend:** Django, Flask, Express, FastAPI
+- **Móvil:** Flutter, React Native
+- **IA:** TensorFlow, PyTorch, scikit-learn
+
+#### Bases de Datos
+- **SQL:** PostgreSQL, MySQL, SQLite
+- **NoSQL:** MongoDB, Firebase, Supabase
+- **En la nube:** AWS, Google Cloud, Vercel
+
+#### Plataformas
+- **Web** (aplicaciones web)
+- **Móvil** (apps para Android/iOS)
+- **Desktop** (aplicaciones de escritorio)
+- **IoT/Arduino** (proyectos de hardware)
+- **APIs** (servicios web)
+
+### 💡 Recomendaciones por Nivel
+
+**Principiantes:** Python + Flask/Django para web, o JavaScript + React
+**Intermedios:** Node.js + Express + MongoDB, o Python + FastAPI
+**Avanzados:** Lo que quieran usar - ¡sorpréndenos!
 
 ---
 
