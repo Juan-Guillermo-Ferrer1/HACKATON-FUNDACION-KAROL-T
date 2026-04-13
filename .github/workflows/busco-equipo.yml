@@ -137,21 +137,39 @@ jobs:
 
           readme_content += "\n*Esta lista se actualiza automáticamente. Para contactar, usa el correo proporcionado.*\n"
 
+          # Write busco table to temporary file
           try:
-            with open('Participantes/README_BUSCO.md', 'w') as f:
+            with open('/tmp/busco_table.md', 'w') as f:
               f.write(readme_content)
-            print("README updated successfully")
+            print("Busco table written to temp file")
           except Exception as e:
-            print(f"Error writing README: {e}")
+            print(f"Error writing temp file: {e}")
             exit(1)
 
           print(f"Total publicaciones: {len(existing)}")
           EOF
 
+      - name: Update README with busco table
+        run: |
+          # Replace the busco section in README.md
+          if [ -f "Participantes/README.md" ]; then
+            # Use awk to replace content between markers
+            awk '
+            BEGIN { in_section = 0; printed = 0 }
+            /^## 🤝 Busco Compañeros$/ { in_section = 1; print; next }
+            /^## 📝 Descripciones Detalladas$/ && in_section == 1 && !printed {
+              print ""; system("cat /tmp/busco_table.md"); print ""; printed = 1; next
+            }
+            /^---$/ && in_section == 1 && printed { in_section = 0 }
+            in_section == 0 || /^## 🤝 Busco Compañeros$/ { print }
+            ' Participantes/README.md > /tmp/updated_readme.md
+            mv /tmp/updated_readme.md Participantes/README.md
+          fi
+
       - name: Commit and push changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add Participantes/busco-equipo.json Participantes/README_BUSCO.md 2>/dev/null || true
+          git add Participantes/busco-equipo.json Participantes/README.md
           git diff --staged --quiet || git commit -m "Actualizar busco-equipo de issue #${{ github.event.issue.number }}"
           git push

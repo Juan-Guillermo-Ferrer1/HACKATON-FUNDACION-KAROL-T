@@ -155,19 +155,38 @@ jobs:
           with open(filepath, 'w') as f:
             json.dump(existing, f, indent=2, ensure_ascii=False)
 
-          readme_content = "# Participantes Registrados\n\n| # | Equipo | Integrantes | Institucion | Edades | Skills | Correo | Categoria | Experiencia | Fecha |\n|---|--------|-------------|-------------|--------|--------|--------|-----------|-------------|-------|\n"
+          # Generate teams table
+          equipos_table = "| # | Equipo | Integrantes | Institución | Edades | Skills | Correo | Categoría | Experiencia | Fecha |\n|---|--------|-------------|-------------|--------|--------|--------|-----------|-------------|-------|\n"
           for i, p in enumerate(existing):
             integrantes = ', '.join(p.get('integrantes', []))
             fecha = p.get('fecha_inscripcion', '')[:10]
-            readme_content += f"| {i+1} | {p.get('equipo', '')} | {integrantes} | {p.get('institucion', '')} | {p.get('edades', '')} | {p.get('skills', '')} | {p.get('correo', '')} | {p.get('categoria', '')} | {p.get('experiencia', '')} | {fecha} |\n"
+            equipos_table += f"| {i+1} | {p.get('equipo', '')} | {integrantes} | {p.get('institucion', '')} | {p.get('edades', '')} | {p.get('skills', '')} | {p.get('correo', '')} | {p.get('categoria', '')} | {p.get('experiencia', '')} | {fecha} |\n"
 
-          readme_content += "\n*Esta lista se actualiza automaticamente cuando un participante se registra mediante un issue.*\n"
+          equipos_table += "\n*Esta lista se actualiza automáticamente cuando un equipo se registra mediante un issue.*\n"
 
-          with open('Participantes/README.md', 'w') as f:
-            f.write(readme_content)
+          # Write teams table to a temporary file
+          with open('/tmp/equipos_table.md', 'w') as f:
+            f.write(equipos_table)
 
           print(f"Total participantes: {len(existing)}")
           EOF
+
+      - name: Update README with teams table
+        run: |
+          # Replace the teams section in README.md
+          if [ -f "Participantes/README.md" ]; then
+            # Use awk to replace content between markers
+            awk '
+            BEGIN { in_section = 0; printed = 0 }
+            /^## 🏆 Equipos Inscritos$/ { in_section = 1; print; next }
+            /^---$/ && in_section == 1 && !printed {
+              print ""; system("cat /tmp/equipos_table.md"); print ""; printed = 1; next
+            }
+            /^## 🤝 Busco Compañeros$/ { in_section = 0 }
+            in_section == 0 || /^## 🏆 Equipos Inscritos$/ { print }
+            ' Participantes/README.md > /tmp/updated_readme.md
+            mv /tmp/updated_readme.md Participantes/README.md
+          fi
 
       - name: Commit and push changes
         run: |
