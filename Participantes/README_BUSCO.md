@@ -2,9 +2,12 @@
 
 | # | Nombre | Tipo | Rol | Skills | Institución | Edad | Correo |
 |---|--------|------|-----|--------|-------------|------|--------|
+| 1 | - Juan Ferrer Gasca | 🔽 Busca equipo | DevOps | Nada | Recocha | 17 | juangasca4444@gmail.com |
 
 ## Descripciones
 
-*Esta lista se actualiza automáticamente. Para contactar, usa el correo proporcionado.*
+### - Juan Ferrer Gasca
+Nada
 
-¿No encuentras compañeros? ¡Sé el primero en publicar tu búsqueda!
+
+*Esta lista se actualiza automáticamente. Para contactar, usa el correo proporcionado.*
