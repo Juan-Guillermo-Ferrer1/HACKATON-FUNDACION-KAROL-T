@@ -12,7 +12,10 @@ jobs:
       contents: write
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
-      ACTION: ${{ github.event.action }}
+      ISSUE_TITLE: ${{ github.event.issue.title }}
+      ISSUE_ACTION: ${{ github.event.action }}
+      ISSUE_CREATED_AT: ${{ github.event.issue.created_at }}
+      ISSUE_HTML_URL: ${{ github.event.issue.html_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,17 +37,34 @@ jobs:
           import os
           from pathlib import Path
 
+          # Debug info
+          print("=== DEBUG INFO ===")
+          print(f"TITLE: {os.environ.get('ISSUE_TITLE', 'NOT SET')}")
+          print(f"ACTION: {os.environ.get('ISSUE_ACTION', 'NOT SET')}")
+
           body = Path("/tmp/issue_body.txt").read_text()
-          title = "${{ github.event.issue.title }}"
-          action = "${{ github.event.action }}"
+          title = os.environ.get('ISSUE_TITLE', '')
+          action = os.environ.get('ISSUE_ACTION', '')
+
+          print(f"Title received: {title}")
+          print(f"Action: {action}")
+          print(f"Body preview: {body[:200]}...")
 
           nombre = title.replace('[BUSCO-EQUIPO]', '').replace('[busco-equipo]', '').strip()
+          print(f"Nombre extraído: {nombre}")
 
           filepath = 'Participantes/busco-equipo.json'
           existing = []
           if os.path.exists(filepath):
-            with open(filepath, 'r') as f:
-              existing = json.load(f)
+            try:
+              with open(filepath, 'r') as f:
+                existing = json.load(f)
+              print(f"Loaded existing data: {len(existing)} items")
+            except json.JSONDecodeError as e:
+              print(f"Error loading JSON: {e}")
+              existing = []
+          else:
+            print("No existing file, starting fresh")
 
           if action == 'closed':
             existing = [p for p in existing if p.get('nombre', '').lower() != nombre.lower()]
@@ -59,8 +79,8 @@ jobs:
               'institucion': '',
               'edad': '',
               'descripcion': '',
-              'fecha': '${{ github.event.issue.created_at }}',
-              'issue_url': '${{ github.event.issue.html_url }}'
+              'fecha': os.environ.get('ISSUE_CREATED_AT', ''),
+              'issue_url': os.environ.get('ISSUE_HTML_URL', '')
             }
 
             field_mapping = {
@@ -97,8 +117,13 @@ jobs:
             existing.append(data)
             print(f"Publicación guardada: {nombre}")
 
-          with open(filepath, 'w') as f
-            json.dump(existing, f, indent=2, ensure_ascii=False)
+          try:
+            with open(filepath, 'w') as f:
+              json.dump(existing, f, indent=2, ensure_ascii=False)
+            print(f"JSON saved successfully: {len(existing)} items")
+          except Exception as e:
+            print(f"Error saving JSON: {e}")
+            exit(1)
 
           readme_content = "# Busco Equipo\n\n| # | Nombre | Tipo | Rol | Skills | Institución | Edad | Correo |\n|---|--------|------|-----|--------|-------------|------|--------|\n"
           for i, p in enumerate(existing):
@@ -112,8 +137,13 @@ jobs:
 
           readme_content += "\n*Esta lista se actualiza automáticamente. Para contactar, usa el correo proporcionado.*\n"
 
-          with open('Participantes/README_BUSCO.md', 'w') as f:
-            f.write(readme_content)
+          try:
+            with open('Participantes/README_BUSCO.md', 'w') as f:
+              f.write(readme_content)
+            print("README updated successfully")
+          except Exception as e:
+            print(f"Error writing README: {e}")
+            exit(1)
 
           print(f"Total publicaciones: {len(existing)}")
           EOF
