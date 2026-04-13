@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "nombre": "- Petro",
+    "tipo": "equipo",
+    "rol": "Marketing",
+    "skills": "Nada",
+    "correo": "juangasca4444@gmail.com",
+    "institucion": "Recocha",
+    "edad": "17",
+    "descripcion": "Sin descripción adicional",
+    "fecha": "2026-04-13T15:53:40Z",
+    "issue_url": "https://github.com/Juan-Guillermo-Ferrer1/HACKATON-FUNDACION-PROMITIERRA/issues/25"
+  }
+]

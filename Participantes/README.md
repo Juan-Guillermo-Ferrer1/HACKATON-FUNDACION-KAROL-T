@@ -14,12 +14,17 @@ Esta página contiene las listas actualizadas de **equipos inscritos** y **perso
 
 ## 🤝 Busco Compañeros
 
+# Busco Equipo
+
 | # | Nombre | Tipo | Rol | Skills | Institución | Edad | Correo |
 |---|--------|------|-----|--------|-------------|------|--------|
+| 1 | - Petro | 🔽 Busca equipo | Marketing | Nada | Recocha | 17 | juangasca4444@gmail.com |
 
-## 📝 Descripciones Detalladas
+## Descripciones
 
-### Descripciones de quienes buscan equipo:
+### - Petro
+Sin descripción adicional
+
 
 *Esta lista se actualiza automáticamente. Para contactar, usa el correo proporcionado.*
 
